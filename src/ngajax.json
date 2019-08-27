@@ -1,0 +1,447 @@
+{
+	"Angular $q": {
+		"prefix": "ngq",
+		"description": "Angular 1.x $q\n",
+		"body": [
+			"var deferred = \\$q.defer();",
+			"",
+			"deferred.resolve(resultObj); //triggers successCallback",
+			"deferred.reject(reasonObj); //triggers errorCallback",
+			"deferred.notify(progressObj); //triggers progressCallback",
+			"",
+			"var promise = deferred.promise;",
+			"",
+			"promise",
+			"\t.then(function ${1:successCallback}() {",
+			"\t\t",
+			"\t}).catch(function ${4:fnFailure}() {",
+			"\t\t",
+			"\t}).finally(function ${5:fnAlways}() {",
+			"\t\t",
+			"\t});",
+			"",
+			"promise",
+			"\t.then(function ${1:successCallback}() {",
+			"\t\t",
+			"\t}, function ${2:errorCallback}() {",
+			"\t\t",
+			"\t}, function ${3:progressCallback}() {",
+			"\t\t",
+			"\t});",
+			""
+		]
+	},
+	"Angular $q.all": {
+		"prefix": "ngqAll",
+		"description": "Angular 1.x $q.all\n",
+		"body": [
+			"\\$q.all([${1:promises}]).then(function (result) {",
+			"\t$0",
+			"});",
+			""
+		]
+	},
+	"Angular $q.race": {
+		"prefix": "ngqRace",
+		"description": "Angular 1.x $q.race\n",
+		"body": [
+			"\\$q.race([${1:promises]).then(function (result) {",
+			"\t$0",
+			"});",
+			""
+		]
+	},
+	"Angular $http": {
+		"prefix": "ngHTTP",
+		"description": "Angular 1.x $http\n",
+		"body": [
+			"\\$http({",
+			"\turl: '${url}',",
+			"\tmethod: '${METHOD}'",
+			"}).then(function ${successCallback}(result) {",
+			"\t$0",
+			"}, function ${errorCallback}(response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $http.get": {
+		"prefix": "ngHTTPGet",
+		"description": "Angular 1.x $http.get\n",
+		"body": [
+			"\\$http.get('${url}', ${config}).then(function(result){",
+			"\t${0}",
+			"}, function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $http.post": {
+		"prefix": "ngHTTPPost",
+		"description": "Angular 1.x $http.post\n",
+		"body": [
+			"\\$http.post('${url}', data, config).then(function(result){",
+			"\t${0}",
+			"}, function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $http.put": {
+		"prefix": "ngHTTPPut",
+		"description": "Angular 1.x $http.put\n",
+		"body": [
+			"\\$http.put('${url}', ${config}).then(function(result){",
+			"\t${0}",
+			"}, function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $http.patch": {
+		"prefix": "ngHTTPPatch",
+		"description": "Angular 1.x $http.patch\n",
+		"body": [
+			"\\$http.patch('${url}', ${config}).then(function(result){",
+			"\t${0}",
+			"}, function (response) {",
+			"\t",
+			"});"
+		]
+	},
+	"Angular $http.delete": {
+		"prefix": "ngHTTPDelete",
+		"description": "Angular 1.x $http.delete\n",
+		"body": [
+			"\\$http.delete('${url}', ${config}).then(function(result){",
+			"\t${0}",
+			"}, function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $http.head": {
+		"prefix": "ngHTTPHead",
+		"description": "Angular 1.x $http.head\n",
+		"body": [
+			"\\$http.head('${url}', ${config}).then(function(result){",
+			"\t${0}",
+			"}, function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $http.jsonp": {
+		"prefix": "ngHTTPJSONP",
+		"description": "Angular 1.x $http.jsonp\n",
+		"body": [
+			"\\$http.jsonp('${url}', ${config}).then(function(result){",
+			"\t${0}",
+			"}, function (response) {",
+			"\t",
+			"});"
+		]
+	},
+	"Angular AJAX": {
+		"prefix": "ngAJAX",
+		"description": "Angular 1.x AJAX\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular.module('Analytics').factory('\\$\\$api', \\$\\$api);",
+			"",
+			"\t\\$\\$api.inject = ['\\$http', '\\$q'];",
+			"",
+			"\tfunction \\$\\$api(\\$http, \\$q) {",
+			"",
+			"\t\tfunction _request(\\$\\$method) {",
+			"\t\t\tvar deferred = \\$q.defer();",
+			"",
+			"\t\t\t\\$\\$method.then(function (response) {",
+			"\t\t\t\tdeferred.resolve(response);",
+			"\t\t\t}).catch(function (response) {",
+			"\t\t\t\tdeferred.reject(response);",
+			"\t\t\t});",
+			"",
+			"\t\t\treturn deferred.promise;",
+			"\t\t}",
+			"",
+			"\t\tfunction httpRequest(config) {",
+			"\t\t\tvar \\$\\$method = \\$http(config);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction getRequest(url, config) {",
+			"\t\t\tvar \\$\\$method = (typeof config !== 'undefined') ? \\$http.get(url, config) : \\$http.get(url);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction postRequest(url, data, config) {",
+			"\t\t\tvar \\$\\$method = (typeof config !== 'undefined') ? \\$http.post(url, data, config) : \\$http.post(url, data);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction putRequest(url, data, config) {",
+			"\t\t\tvar \\$\\$method = (typeof config !== 'undefined') ? \\$http.put(url, data, config) : \\$http.put(url, data);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction patchRequest(url, data, config) {",
+			"\t\t\tvar \\$\\$method = (typeof config !== 'undefined') ? \\$http.patch(url, data, config) : \\$http.patch(url, data);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction deleteRequest(url, config) {",
+			"\t\t\tvar \\$\\$method = (typeof config !== 'undefined') ? \\$http.delete(url, config) : \\$http.delete(url);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction headRequest(url, config) {",
+			"\t\t\tvar \\$\\$method = (typeof config !== 'undefined') ? \\$http.head(url, config) : \\$http.head(url);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction jsonpRequest(url, config) {",
+			"\t\t\tvar \\$\\$method = (typeof config !== 'undefined') ? \\$http.jsonp(url, config) : \\$http.jsonp(url);",
+			"",
+			"\t\t\treturn _request(\\$\\$method);",
+			"\t\t}",
+			"",
+			"\t\tfunction allRequest(promises) {",
+			"\t\t\treturn \\$q.all(promises);",
+			"\t\t}",
+			"",
+			"\t\tfunction raceRequest(promises) {",
+			"\t\t\treturn \\$q.race(promises);",
+			"\t\t}",
+			"",
+			"\t\treturn {",
+			"\t\t\trequest: httpRequest,",
+			"\t\t\tget: getRequest,",
+			"\t\t\tpost: postRequest,",
+			"\t\t\tput: putRequest,",
+			"\t\t\tpatch: patchRequest,",
+			"\t\t\tdelete: deleteRequest,",
+			"\t\t\thead: headRequest,",
+			"\t\t\tjsonp: jsonpRequest,",
+			"\t\t\tall: allRequest,",
+			"\t\t\trace: raceRequest,",
+			"\t\t};",
+			"\t}",
+			"",
+			"})();"
+		]
+	},
+	"Angular $$api.request": {
+		"prefix": "ngRequest",
+		"description": "Angular 1.x $$api.request\n",
+		"body": [
+			"\\$\\$api.request({",
+			"\tmethod: '${GET}',",
+			"\turl: '${url}',",
+			"\tparams: ${params}",
+			"}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $$api.get": {
+		"prefix": "ngGet",
+		"description": "Angular 1.x $$api.get\n",
+		"body": [
+			"\\$\\$api.get('${url}', ${config}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $$api.post": {
+		"prefix": "ngPost",
+		"description": "Angular 1.x $$api.post\n",
+		"body": [
+			"\\$\\$api.post('${url}', ${data}, ${config}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $$api.put": {
+		"prefix": "ngPut",
+		"description": "Angular 1.x $$api.put\n",
+		"body": [
+			"\\$\\$api.put('${url}', ${data}, ${config}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $$api.patch": {
+		"prefix": "ngPatch",
+		"description": "Angular 1.x $$api.patch\n",
+		"body": [
+			"\\$\\$api.patch('${url}', ${data}, ${config}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $$api.delete": {
+		"prefix": "ngDelete",
+		"description": "Angular 1.x $$api.delete\n",
+		"body": [
+			"\\$\\$api.delete('${url}', ${config}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $$api.head": {
+		"prefix": "ngHead",
+		"description": "Angular 1.x $$api.head\n",
+		"body": [
+			"\\$\\$api.head('${url}', ${config}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular $$api.jsonp": {
+		"prefix": "ngJSONP",
+		"description": "Angular 1.x $$api.jsonp\n",
+		"body": [
+			"\\$\\$api.jsonp('${url}', ${config}).then(function (result) {",
+			"\t$0",
+			"}).catch(function (response) {",
+			"\t",
+			"});",
+			""
+		]
+	},
+	"Angular Service return a $$api.request promise": {
+		"prefix": "ngRequestData",
+		"description": "Angular 1.x Service $$api.request return a promise\n",
+		"body": [
+			"function ${requestData}(${config}) {",
+			"\treturn \\$\\$api.request(${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.get promise": {
+		"prefix": "ngGetData",
+		"description": "Angular 1.x Service $$api.get return a promise\n",
+		"body": [
+			"function ${getData}(${url}, ${config}) {",
+			"\treturn \\$\\$api.get(${url}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.post promise": {
+		"prefix": "ngPostData",
+		"description": "Angular 1.x Service $$api.post return a promise\n",
+		"body": [
+			"function ${postData}(${url}, ${data}, ${config}) {",
+			"\treturn \\$\\$api.post(${url}, ${data}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.put promise": {
+		"prefix": "ngPutData",
+		"description": "Angular 1.x Service $$api.put return a promise\n",
+		"body": [
+			"function ${putData}(${url}, ${data}, ${config}) {",
+			"\treturn \\$\\$api.put(${url}, ${data}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.patch promise": {
+		"prefix": "ngPatchData",
+		"description": "Angular 1.x Service $$api.patch return a promise\n",
+		"body": [
+			"function ${patchData}(${url}, ${data}, ${config}) {",
+			"\treturn \\$\\$api.patch(${url}, ${data}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.delete promise": {
+		"prefix": "ngDeleteData",
+		"description": "Angular 1.x Service $$api.delete return a promise\n",
+		"body": [
+			"function ${deleteData}(${url}, ${config}) {",
+			"\treturn \\$\\$api.delete(${url}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.head promise": {
+		"prefix": "ngHeadData",
+		"description": "Angular 1.x Service $$api.head return a promise\n",
+		"body": [
+			"function ${headData}(${url}, ${config}) {",
+			"\treturn \\$\\$api.head(${url}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.jsonp promise": {
+		"prefix": "ngJSONPData",
+		"description": "Angular 1.x Service $$api.jsonp return a promise\n",
+		"body": [
+			"function ${jsonpData}(${url}, ${config}) {",
+			"\treturn \\$\\$api.jsonp(${url}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Controller calls service promise": {
+		"prefix": [
+			"ngResponse",
+			"ngCallAjax"
+		],
+		"description": "Angular 1.x Controller calls service promise\n",
+		"body": [
+			"${name}Service.${method}Data.then(function (result) {",
+			"\tif (result.data.code == '200') {",
+			"\t\t\\$scope.${data} = result.data.data;",
+			"\t\t$0",
+			"\t}",
+			"}).catch(function (response) {",
+			"",
+			"});",
+			""
+		]
+	}
+}

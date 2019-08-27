@@ -1,0 +1,29 @@
+{
+	"Angular Controller": {
+		"prefix": "ngcontroller",
+		"description": "Angular 1.x Controller\n依赖采用 Annotation 形式\n['dependencies', fn(dependencies)]，\n防止代码压缩参数破坏\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular",
+			"\t\t.module('${Module}')",
+			"\t\t.controller('${Controller}Ctrl', ${Controller}Ctrl)",
+			"",
+			"\t${Controller}Ctrl.\\$inject = [];",
+			"",
+			"\tfunction ${Controller}Ctrl() {",
+			"\t\tvar vm = this;",
+			"",
+			"\t\tfunction init() {",
+			"\t\t\t$0",
+			"\t\t}",
+			"",
+			"\t\tinit();",
+			"",
+			"\t}",
+			"",
+			"}());"
+		]
+	}
+}

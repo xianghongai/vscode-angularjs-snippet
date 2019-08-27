@@ -1,0 +1,82 @@
+{
+  "Angular scope": {
+    "prefix": "ngscope",
+    "description": "Angular 1.x $scope\n",
+    "body": [
+      "\\$scope.${key} = ${value};"
+    ]
+  },
+  "Angular rootScope": {
+    "prefix": [
+      "ngrootScope",
+      "ngrScope"
+    ],
+    "description": "Angular 1.x $rootScope\n",
+    "body": [
+      "\\$rootScope.${key} = ${value};"
+    ]
+  },
+  "Angular vm": {
+    "prefix": "ngvm",
+    "description": "Angular 1.x vm\n",
+    "body": [
+      "vm.${key} = ${value};"
+    ]
+  },
+  "Angular translate": {
+    "prefix": [
+      "ngtranslate",
+      "ngi18n"
+    ],
+    "description": "Angular 1.x Translation by a filter(angular-translate)\n",
+    "body": [
+      "{{'${I18N}'|translate}}"
+    ]
+  },
+  "Angular $emit": {
+    "prefix": "ngEmit",
+    "description": "Angular 1.x $emit",
+    "body": [
+      "\\$scope.${onEmitEvent} = function () {",
+      "\t\\$scope.\\$emit('${EMIT_EVENT_NAME}', ${params});",
+      "}"
+    ]
+  },
+  "Angular $broadcast": {
+    "prefix": "ngBroadcast",
+    "description": "Angular 1.x $broadcast",
+    "body": [
+      "\\$scope.${onBroadcastEvent} = function () {",
+      "\t\\$scope.\\$broadcast('${BROADCAST_EVENT_NAME}', ${params});",
+      "}"
+    ]
+  },
+  "Angular $on": {
+    "prefix": "ngOn",
+    "description": "Angular 1.x $on",
+    "body": [
+      "\\$scope.\\$on('${EVENT_NAME}', function (event, params) {",
+      "\tconsole.dir(event);",
+      "\tconsole.dir(params);$0",
+      "});"
+    ]
+  },
+  "Angular $off": {
+    "prefix": "ngOff",
+    "description": "Angular 1.x $off",
+    "body": [
+      "\\$scope.\\$on('\\$destroy', function() {",
+      "\telement.off('event', handleEvent);",
+      "});"
+    ]
+  },
+  "Angular $safeApply": {
+    "prefix": "ngSafeApply",
+    "description": "Angular 1.x $safeApply",
+    "body": [
+      "function safeApply(\\$scope, fn) {",
+      "\t\\$scope.\\$\\$phase || \\$scope.\\$root.\\$\\$phase ? fn() : \t$scope.\\$apply(fn);",
+      "}"
+    ]
+  }
+}

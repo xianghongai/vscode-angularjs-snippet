@@ -1,0 +1,128 @@
+{
+	"Angular UI-Router Multiple named uiviews": {
+		"prefix": "uiviews",
+		"description": "Angular 1.x UI-Router, Defining Named Views\n<uiview class=\"header\"></uiview>\n<uiview class=\"nav\"></uiview>\n<uiview class=\"content\"></uiview>\n",
+		"body": [
+			"var state${Name}Report = {",
+			"\tname: '${report}',",
+			"\tviews: {",
+			"\t\tfilters: FiltersComponent,",
+			"\t\ttabledata: TabledataComponent,",
+			"\t\tgraph: GraphComponent,",
+			"\t}",
+			"}"
+		]
+	},
+	"Angular UI-Router state": {
+		"prefix": "ngstate",
+		"description": "Angular 1.x UI-Router state\n",
+		"body": [
+			"var state${Name} = {",
+			"\tname: '${state}',",
+			"\turl: '${url}',",
+			"\ttemplateUrl: '${template}.html',",
+			"\tcontroller: '${Controller} as ${vm}'",
+			"};"
+		]
+	},
+	"Angular UI-Router state(Resolve Data)": {
+		"prefix": "ngstateresove",
+		"description": "Angular 1.x UI-Router state(Resolve Data)\n",
+		"body": [
+			"var state${Name} = {",
+			"\tname: '${state}',",
+			"\turl: '${url}',",
+			"\ttemplateUrl: '${template}.html',",
+			"\tcontroller: '${Controller} as ${vm}',",
+			"\tresolve: {",
+			"\t\t${obj}: ['\\$stateParams', '${objService}', function (\\$stateParams, ${objService}) { ",
+			"\t\t\treturn ${objService}.${getObj}(\\$stateParams.${id});",
+			"\t\t}]",
+			"\t}",
+			"};"
+		]
+	},
+	"Angular UI-Router Route to Component(Resolve Data)": {
+		"prefix": "ngstatecomponent",
+		"description": "Angular 1.x UI-Router Route to Component\n",
+		"body": [
+			"var state${Name} = {",
+			"\tname: '${state}',",
+			"\turl: '${url}',",
+			"\tcomponent: '${component}',",
+			"\tresolve: {",
+			"\t\t${obj}: ['\\$stateParams', '${objService}', function (\\$stateParams, ${objService}) { ",
+			"\t\t\treturn ${objService}.${getObj}(\\$stateParams.${id});",
+			"\t\t}]",
+			"\t}",
+			"};"
+		]
+	},
+	"Angular UI-Router state(Path)": {
+		"prefix": "ngstatepath",
+		"description": "Angular 1.x UI-Router state(Path)\n",
+		"body": [
+			"var state${Name} = {",
+			"\tname: '${state}',",
+			"\turl: '${url}/:${id}',",
+			"\ttemplateUrl: '${template}.html',",
+			"\tcontroller: '${Controller} as ${vm}'",
+			"};"
+		]
+	},
+	"Angular UI-Router state(Query)": {
+		"prefix": "ngstatequery",
+		"description": "Angular 1.x UI-Router state(Query)\n",
+		"body": [
+			"var state${Name} = {",
+			"\tname: '${state}',",
+			"\turl: '${url}?${query}',",
+			"\ttemplateUrl: '${template}.html',",
+			"\tcontroller: '${Controller} as ${vm}'",
+			"};"
+		]
+	},
+	"Angular UI-Router state(Non-url)": {
+		"prefix": "ngstatenonurl",
+		"description": "Angular 1.x UI-Router state(Non-url)\n",
+		"body": [
+			"var state${Name} = {",
+			"\tname: '${state}',",
+			"\turl: '${url}',",
+			"\tparams: {",
+			"\t\t${id}: null",
+			"\t},",
+			"\ttemplateUrl: '${template}.html',",
+			"\tcontroller: '${Controller} as ${vm}'",
+			"};"
+		]
+	},
+	"$state.go": {
+		"prefix": [ "ngstatego", "nggo" ],
+		"description": "Angular 1.x UI-Router $state\n$state.go(to [, toParams] [, options])",
+		"body": [
+			"\\$state.go('${state}', {${param}: ${value});"
+		]
+	},
+	"UISref": {
+		"prefix": [ "uisref", "sref" ],
+		"description": "Angular 1.x UI-Router ui-sref\n",
+		"body": [
+			"ui-sref=\"${statename}\""
+		]
+	},
+	"UISref, active": {
+		"prefix": [ "uisrefactive", "srefactive" ],
+		"description": "Angular 1.x UI-Router UISref, state is active\n",
+		"body": [
+			"ui-sref=\"${statename}\" ui-sref-active=\"${cls}_active\""
+		]
+	},
+	"UISref, Parameters": {
+		"prefix": [ "uisrefparams", "srefparams" ],
+		"description": "Angular 1.x UI-Router UISref take params\n",
+		"body": [
+			"ui-sref=\"${statename}({ ${id}: ${value} })\""
+		]
+	}
+}
