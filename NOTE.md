@@ -50,30 +50,67 @@ handleAsync.then(successCallback).catch(errorCallback).finally(callback, notifyC
 
 ---
 
+### Controller 与 View 通信：
+
+- 将数据绑在 `$scope` 上，视图中通过表达式解析然后渲染
+- 通过 `this` 绑定；`controllerAs` 可用来设置控制器的别名，component 中默认值为 `$ctrl`
+
+---
+
 ### [Directive](https://docs.angularjs.org/guide/directive) / [Component](https://docs.angularjs.org/guide/component)
 
 - `compile`: used when we need to modify directive template, like add new expression, append another directive inside this directive，修改 DOM 模板
 - `controller`: used when we need to share/reuse $scope data，业务逻辑和 $scope 数据
 - `link`: it is a function which used when we need to attach event handler or to manipulate DOM，操作实例化 DOM，绑定事件，交互，属性及$scope的监听
 
-```javascript
-// 注意 bind 名的 Normalization
+**注意 bind 名的 Normalization**
 
-// directive
+```javascript
+// Directive
 module.directive(name, fn:function);
 
+// 限定声明方式 Element, Attribute *, Class, Comment
+restrict:'EACM',
+// 是否创建隔离作用域
+// 1. scope: {}, 不继承隔离： isolate scope，不再继承父作用域中的属性，父作用域给指令传值依赖绑定策略
+// 2. scope: true, 继承隔离：继承父作用域，并创建新的子 (child) 作用域，父变子变，子变父不变
+// 3. scope: false, 继承不隔离：不创建作用域，使用父作用域，父变子变，子变父变
+scope
+
+// 在预链接阶段(pre-linking)之前实例化 controller
+controller
+// bindToController 是为了新版本 Component 作 migration 用的
 bindToController: { // 定义想传入独立作用域的属性，并把它们绑定到 controller 上
-  reference_copy: "=?",
-  value_copy: "@",
-  method : "&"
-},
-scope: { // scope: true/false/{} 用于隔离/继承/限定作用域
+  reference_copy: "=?",  // 外部和内部相互改变
+  value_copy: "@", // 只能是外部影响内部
+  method : "&" // 把内部函数返回值和外部属性绑定
 },
 controllerAs: 'vm' // 设定别名以在模板中访问
+// 不建议用 Controller，directive 只是附加行为能力，不是用以‘组件化’
 
-// component
+// 依赖其它指令，将其它指令 Controller 作为第四个参数，注入到当前指令
+// (no prefix), 在前元素上找，没找到会报错
+// ?, 在前元素上找，没找到，把 `null` 传给 `link`
+// ^, 在前元素和它的父上找，没找到会报错
+// ?^, 在前元素和它的父上找，没找到，把 `null` 传给 `link`
+// ^^, 在它的父上找，没找到会报错
+// ?^^, 在它的父上找，没找到，把 `null` 传给 `link`
+require
+
+template
+templateUrl
+transclude
+
+replace // 不要用，已 Deprecated
+```
+
+不建议在一个元素上附加太多指令，涉及到各个作用域的组合问题，如 isolated scope + isolated scope  或 isolated scope + child scope 是不会工作的。
+
+```javascript
+// Component
 module.component(name, options:object);
 
+// 默认创建隔离作用域，使用 bindings 结合绑定策略
 bindings: { // 用 bindings 传递父层作用域中属性到 component 中，component 始终是独立作用域
   one_way: '<',
   two_way: '=',
@@ -81,7 +118,13 @@ bindings: { // 用 bindings 传递父层作用域中属性到 component 中，co
   method: '&'
 }
 // 默认 $ctrl, 模板中直接访问
+controllerAs
+require
 ```
+
+#### Transclusion
+
+`transclude`
 
 ---
 
@@ -122,8 +165,8 @@ AngularJS 需要明白的理念比较少，主要是围绕“特定目标的对�
 因此，尽可能使用框架提供的服务而不是原生(native)服务。
 
 1. DOM 中 插值绑定/interpolation bindings
-    - `<span title="{{ attrBinding }}" ng-click="functionExpression()">{{ textBinding }}</span>`
-    - 表达式一次性绑定以 `::` 开头
+    - `<span title="{{ attrBinding }}" ng-click="functionExpression()">{{ textBinding }}</span>`，双向绑定, Two-way
+    - 表达式一次性绑定(单向绑定, One-way)以 `::` 开头
     - DOM 绑定布尔属性
         + HTML 规范不要求浏览器保留布尔属性的值。插值表达式放入 `disabled="{{isDisabled}}"` 这样的属性中，绑定信息会丢失，因为浏览器会忽略属性值
         + 特殊的 `ng-` 前缀指令：`disabled`, `required`, `selected`, `checked`, `readOnly` , `open`
@@ -332,6 +375,12 @@ MVVM 模式的要点是：以领域对象 (Domain Model) 为中心，遵循“�
     Service 是 new 出来的，其结果必然是类实例，无法直接返回一个可供调用的函数或数字等原生对象。
 
 AngularJS 提供 `decorator` 机制用来改变服务的行为，慎用。
+
+---
+
+### ngModel
+
+根据 input/select/textarea 元素上模型的有效性，会有一套 CSS Classes 机制。
 
 ---
 
