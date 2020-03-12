@@ -112,7 +112,7 @@ module.component(name, options:object);
 
 // 默认创建隔离作用域，使用 bindings 结合绑定策略
 bindings: { // 用 bindings 传递父层作用域中属性到 component 中，component 始终是独立作用域
-  one_way: '<',
+  one_way: '<', // 1.5 版本加入
   two_way: '=',
   value_copy: '@?',
   method: '&'
