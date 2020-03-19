@@ -183,7 +183,7 @@ AngularJS 需要明白的理念比较少，主要是围绕“特定目标的对�
     - `ng-class="style"`，String Syntax
     - `ng-class="[style1, style2, style3]"`，Array Syntax
     - `ng-class="[style4, {orange: warning}]"`，Array and Map Syntax
-    - `ng-class="$variableToEvaluate ? 'class-if-true' : 'class-if-false'">`，Ternary Operator
+    - `ng-class="$variableToEvaluate ? 'class-if-true' : 'class-if-false'"`，Ternary Operator
     - `ng-class="{'first|last|even|odd': $first|$last|$even|$odd}" ng-repeat="item in items track by $index"`，First, Last or Specific Number
 
 3. 限制访问全局变量、原生事件，如 `window`, `document`, `location`, `setInterval`, `setTimeout`
