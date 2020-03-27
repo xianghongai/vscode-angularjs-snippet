@@ -13,6 +13,32 @@ AngularJS  normalization 处理：
 
 JavaScript: `ngModel` ↔ DOM: `ng-model`
 
+```html
+<div ng-controller="Controller">
+  Hello <input ng-model='name'> <hr/>
+  <span ng-bind="name"></span> <br/>
+  <span ng:bind="name"></span> <br/>
+  <span ng_bind="name"></span> <br/>
+  <span data-ng-bind="name"></span> <br/>
+  <span x-ng-bind="name"></span> <br/>
+</div>
+```
+
+### Template
+
+- Source template - the markup to be cloned, if needed. If cloned (`ng-repeat`), this markup will not be rendered to the DOM.
+- Instance template - the actual markup to be rendered to the DOM. If cloning is involved, each instance will be a clone.
+
+```html
+<!-- instance template -->
+<div ng-repeat="i in [0,1,2]">
+    <my-directive>{{i}}</my-directive>
+</div>
+
+<!-- source template -->
+<my-directive>{{i}}</my-directive>
+```
+
 ### $q constructor
 
 ```javascript
@@ -52,16 +78,85 @@ handleAsync.then(successCallback).catch(errorCallback).finally(callback, notifyC
 
 ### Controller 与 View 通信：
 
-- 将数据绑在 `$scope` 上，视图中通过表达式解析然后渲染
-- 通过 `this` 绑定；`controllerAs` 可用来设置控制器的别名，component 中默认值为 `$ctrl`
+- 方式一：将数据绑在 `$scope` 上，视图中通过表达式解析然后渲染
+- 方式二：通过 `this` 绑定；`controllerAs` 可用来设置控制器的别名，component 中默认值为 `$ctrl`
 
 ---
 
-### [Directive](https://docs.angularjs.org/guide/directive) / [Component](https://docs.angularjs.org/guide/component)
+### [Directive](https://docs.angularjs.org/guide/directive) /
+
+`module.directive(name, fn);`
+
+#### "Compile" Versus "Link"
+
+`$compile` 可以匹配 `restrict` 为 element names (`E`), attributes (`A`), class names (`C`), and comments (`M`) 等指令声明。
 
 - `compile`: used when we need to modify directive template, like add new expression, append another directive inside this directive，修改 DOM 模板
+    + Do
+        * Manipulate markup so it serves as a template to instances (clones).
+    + Do not
+        * Attach event handlers.
+        * Inspect child elements.
+        * Set up observations on attributes.
+        * Set up watches on the scope.
 - `controller`: used when we need to share/reuse $scope data，业务逻辑和 $scope 数据
+    + Do:
+        * Define controller logic
+        * Initiate scope variables
+    + Do not:
+        * Inspect child elements (they may not be rendered yet, bound to scope, etc.).
 - `link`: it is a function which used when we need to attach event handler or to manipulate DOM，操作实例化 DOM，绑定事件，交互，属性及$scope的监听
+    + Pre-link function
+        - Do not:
+            * Inspect child elements (they may not be rendered yet, bound to scope, etc.).
+    + Post-link function
+        - Do:
+            * Manipulate DOM (rendered, and thus instantiated) elements.
+            * Attach event handlers.
+            * Inspect child elements.
+            * Set up observations on attributes.
+            * Set up watches on the scope.
+
+#### 单个 directive (single):
+
+- `compile` →
+- `controller` →
+- `pre-link` →
+- `post-link`
+
+#### 嵌套 directives (nested):
+
+- parent `compile`  →
+- child(1,2,...) `compile` →
+- parent `controller` →
+- parent `pre-link` →
+- child 1 `controller` → `pre-link` → `post-link`
+- child n ... →
+- parent `post-link`
+
+#### Sample
+
+```javascript
+myApp.directive( 'myDirective', function () {
+    return {
+        restrict: 'EA',
+        controller: function( $scope, $element, $attrs, $transclude ) {
+            // Controller code goes here.
+        },
+        compile: function compile( tElement, tAttributes, transcludeFn ) {
+            // Compile code goes here.
+            return {
+                pre: function preLink( scope, element, attributes, controller, transcludeFn ) {
+                    // Pre-link code goes here
+                },
+                post: function postLink( scope, element, attributes, controller, transcludeFn ) {
+                    // Post-link code goes here
+                }
+            };
+        }
+    };
+});
+```
 
 **注意 bind 名的 Normalization**
 
@@ -106,6 +201,9 @@ replace // 不要用，已 Deprecated
 
 不建议在一个元素上附加太多指令，涉及到各个作用域的组合问题，如 isolated scope + isolated scope  或 isolated scope + child scope 是不会工作的。
 
+
+### [Component](https://docs.angularjs.org/guide/component)
+
 ```javascript
 // Component
 module.component(name, options:object);
@@ -127,6 +225,16 @@ require
 `transclude`
 
 ---
+
+### service components in auto
+
+- [AngularJS: API: $injector](https://docs.angularjs.org/api/auto/service/$injector)
+- [AngularJS: API: $provide](https://docs.angularjs.org/api/auto/service/$provide)
+
+### Compiler
+
+- [AngularJS: Developer Guide: HTML Compiler](https://docs.angularjs.org/guide/compiler)
+- [AngularJS: API: $compile](https://docs.angularjs.org/api/ng/service/$compile)
 
 ### AngularJS 概念
 
@@ -356,10 +464,10 @@ MVVM 模式的要点是：以领域对象 (Domain Model) 为中心，遵循“�
 
 |                    类型 | Factory | Service | Value | Constant | Provider |
 |------------------------:|---------|---------|-------|----------|----------|
-|          可依赖其它服务   | 是      | 是      | 否    | 否        | 是       |
-|      使用类型友好的注入    | 否      | 是      | 是    | 是        | 否       |
-|      在 config 阶段可用  | 否       | 否       | 否    | 是        | 是       |
-| 可用于创建函数/原生对象    | 是       | 否       | 是    | 是        | 是       |
+|          可依赖其它服务 | 是      | 是      | 否    | 否       | 是       |
+|      使用类型友好的注入 | 否      | 是      | 是    | 是       | 否       |
+|      在 config 阶段可用 | 否      | 否      | 否    | 是       | 是       |
+| 可用于创建函数/原生对象 | 是      | 否      | 是    | 是       | 是       |
 
 - 可依赖其它服务
     `Value` 和 `Constant` 的特殊声明形式，没有进行依赖注入的时机。
