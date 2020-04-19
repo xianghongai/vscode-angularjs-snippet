@@ -1,0 +1,37 @@
+{
+	"Angular Factory (Simple)": {
+		"prefix": "ngfa",
+		"body": [
+			".factory('${1:name}', ['${2:dep}', function(${2:dep}){",
+			"\treturn function (){",
+			"\t\t$0",
+			"\t};",
+			"}])",
+			""
+		],
+		"description": "Angular 1.x Factory (Simple)\n"
+	},
+	"Angular Factory": {
+		"prefix": "ngFactory",
+		"description": "Angular 1.x Factory\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular",
+			"\t\t.module('${1:name}')",
+			"\t\t.factory('${2:name}Factory', ${2:name}Factory)",
+			"",
+			"\t${2:name}Factory.\\$inject = [];",
+			"",
+			"\tfunction ${2:name}Factory() {",
+			"\t\tvar service = {",
+			"\t\t\t$0",
+			"\t\t};",
+			"",
+			"\t\treturn service;",
+			"\t}",
+			"})();"
+		]
+	}
+}

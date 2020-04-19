@@ -1,0 +1,38 @@
+{
+	"Angular Filter (Simple)": {
+		"prefix": "ngf",
+		"body": [
+			".filter('${1:name}', function () {",
+			"\treturn function (${2:input}) {",
+			"\t\treturn $0",
+			"\t};",
+			"})",
+			""
+		],
+		"description": "Angular 1.x Filter (Simple)\n"
+	},
+	"Angular Filter": {
+		"prefix": "ngFilter",
+		"description": "Angular 1.x Filter\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular",
+			"\t\t.module('${1:name}')",
+			"\t\t.filter('${2:name}', ${2:name})",
+			"",
+			"\tfunction ${2:name}() {",
+			"",
+			"\t\tfunction ${2:name}Filter(${Params}){",
+			"\t\t\t$0",
+			"\t\t\treturn ${Params}",
+			"\t\t}",
+			"",
+			"\t\treturn ${2:name}Filter;",
+			"\t}",
+			"",
+			"}());"
+		]
+	}
+}

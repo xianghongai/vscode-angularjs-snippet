@@ -6,19 +6,45 @@ Using [John Papa AngularJS style guide](https://github.com/johnpapa/angular-styl
 
 Note: All the snippets include the final semicolon `;`
 
+```bash
+# Simple & IIFE
+     ngc / ngController                         // Angular Controller
+     ngs / ngService                            // Angular Service
+     ngd / ngDirective / ngDirective.Decorator  // Angular Directive
+    ngco / ngcomponent                          // Angular Component
+     ngm / ngModule                             // Angular module
+   ngcon / ngconfig                             // Angular Config
+ ngconst / ngconstant                           // Angular Constant
+         / ngDecorator                          // Angular Decorator
+    ngfa / ngFactory                            // Angular Factory
+     ngf / ngFilter                             // Angular Filter
+         / ngProvider                           // Angular provider
+     ngr / ngRun                                // Angular Run
 ```
-ngcomponent   // Angular Component
-ngconfig      // Angular Config
-ngconstant    // Angular Constant
-ngcontroller  // Angular Controller
-ngdecorator   // Angular Decorator
-ngdirective   // Angular Directive
-ngfactory     // Angular Factory
-ngfilter      // Angular Filter
-ngmodule      // Angular module
-ngprovider    // Angular provider
-ngrun         // Angular Run
-ngservice     // Angular Service
+
+```javascript
+// Simple: ngc ↵
+.controller('nameCtrl', ['$scope', 'nameService', function ($scope, nameService) {
+
+}])
+
+
+// IIFE: ngcontroller  ↵
+(function () {
+  'use strict';
+
+  angular
+    .module('name')
+    .controller('nameCtrl', nameCtrl)
+
+  nameCtrl.$inject = ['$scope'];
+
+  function nameCtrl($scope) {
+    var $ctrl = this;
+
+  }
+
+}());
 ```
 
 ---
@@ -31,7 +57,7 @@ uiviews                  // multiple named views
 ngstatepath              // Path
 ngstatequery             // Query string
 ngstatenonurl            // Non-url
-ngstatego/nggo           // $state.go
+ngstatego / nggo         // $state.go
 uisref/sref              // ui-sref
 uisrefactive/srefactive  // ui-sref ui-sref-active
 uisrefparams/srefparams  // ui-sref take params
@@ -84,13 +110,16 @@ ngHTTPJSONP   // Angular $http.jsonp()
 ---
 
 ```
-ngscope               // $scope
-ngrootScope/ngrScope  // $rootScope
-ngvm                  // vm
-ngtranslate/ngi18n    // {{'${I18N}'|translate}}
+ngScope               // $scope
+ngCtrl                // $ctrl
+ngWatch               // $watch, $watchGroup, $watchCollection
+ngRootScope/ngrScope  // $rootScope
+ngTranslate/ngi18n    // {{'${I18N}'|translate}}
 ngEmit                // $emit
 ngBroadcast           // $broadcast
 ngOn                  // $on
+ngOff/ngDestroy       // $destroy
+ngto                  // $timeout
 ```
 
 ---

@@ -1,0 +1,116 @@
+{
+	"Angular $scope.property": {
+		"prefix": "ngScope.property",
+		"description": "Angular 1.x $scope\n",
+		"body": ["\\$scope.${1:key} = ${2:value};"]
+	},
+	"Angular $scope method": {
+		"prefix": "ngScope.method",
+		"description": "Angular 1.x $scope method \n",
+		"body": ["\\$scope.${fn} = function () {", "\t$0", "};"]
+	},
+	"$scope.$apply(fn)": {
+		"prefix": "ngScope.apply",
+		"body": [
+			"// change any model outside of the Angular context,",
+			"// to inform Angular of the changes by calling \\$apply() manually",
+			"\\$scope.\\$apply(${1:fn});"
+		],
+		"description": "$scope.$apply(fn)"
+	},
+	"Angular rootScope": {
+		"prefix": ["ngrootScope", "ngrScope"],
+		"description": "Angular 1.x $rootScope\n",
+		"body": ["\\$rootScope.${1:key} = ${2:value};"]
+	},
+	"Angular translate": {
+		"prefix": ["ngtranslate", "ngi18n"],
+		"description": "Angular 1.x Translation by a filter(angular-translate)\n",
+		"body": ["{{'${I18N}'|translate}}"]
+	},
+	"Angular $emit": {
+		"prefix": "ngEmit",
+		"description": "Angular 1.x $emit",
+		"body": [
+			"\\$scope.${onEmitEvent} = function () {",
+			"\t\\$scope.\\$emit('${EMIT_EVENT_NAME}', ${params});",
+			"};"
+		]
+	},
+	"Angular $broadcast": {
+		"prefix": "ngBroadcast",
+		"description": "Angular 1.x $broadcast",
+		"body": [
+			"\\$scope.${onBroadcastEvent} = function () {",
+			"\t\\$scope.\\$broadcast('${BROADCAST_EVENT_NAME}', ${params});",
+			"};"
+		]
+	},
+	"Angular $on": {
+		"prefix": "ngOn",
+		"description": "Angular 1.x $on",
+		"body": [
+			"var clearListener = \\$scope.\\$on('${EVENT_NAME}', function (event, params) {",
+			"\tconsole.dir(event);",
+			"\tconsole.dir(params);$0",
+			"});"
+		]
+	},
+	"Angular off ($destroy)": {
+		"prefix": ["ngOff", "ngDestroy"],
+		"description": "Angular 1.x $off",
+		"body": [
+			"\\$element.on('\\$destroy', function () {",
+			"\t\\$element.off('event', handleEvent);",
+			"\tclearWatch();",
+			"\t\\$scope.\\$destroy();",
+			"});",
+			"\\$scope.\\$on('\\$destroy', function() {",
+			"\t\\$element.off('event', handleEvent);",
+			"// clearWatch();",
+			"// clearListener();",
+			"});"
+		]
+	},
+	"Angular $safeApply": {
+		"prefix": "ngSafeApply",
+		"description": "Angular 1.x $safeApply",
+		"body": [
+			"function safeApply(\\$scope, fn) {",
+			"\t\\$scope.\\$\\$phase || \\$scope.\\$root.\\$\\$phase ? fn() : \\$scope.\\$apply(fn);",
+			"}"
+		]
+	},
+	"$timeout": {
+		"prefix": "ngto",
+		"body": ["\\$timeout(function() {", "\t$0", "});"],
+		"description": "description"
+	},
+	"$scope.$watch": {
+		"prefix": "ngWatch",
+		"body": [
+			"var clearWatch = \\$scope.\\$watch('${1:watchExpression}', function(newValue, oldValue) {",
+			"\t$0",
+			"});"
+		],
+		"description": "$scope.$watch"
+	},
+	"$scope.$watchGroup": {
+		"prefix": "ngWatchGroup",
+		"body": [
+			"var clearWatch = \\$scope.\\$watchGroup(['${1:watchExpressions}'], function(newValue, oldValue) {",
+			"\t$0",
+			"});"
+		],
+		"description": "$scope.$watchGroup"
+	},
+	"$scope.$watchCollection": {
+		"prefix": "ngWatchCollection",
+		"body": [
+			"var clearWatch = \\$scope.\\$watchCollection('${1:watchExpression}', function(newCollection, oldCollection) {",
+			"\t$0",
+			"});"
+		],
+		"description": "$scope.$watchCollection"
+	}
+}

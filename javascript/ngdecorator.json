@@ -1,6 +1,6 @@
 {
 	"Angular Decorator": {
-		"prefix": "ngdecorator",
+		"prefix": "ngDecorator",
 		"description": "Angular 1.x Decorator\n",
 		"body": [
 			"(function () {",

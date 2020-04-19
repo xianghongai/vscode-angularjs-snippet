@@ -427,10 +427,7 @@
 		]
 	},
 	"Angular Controller calls service promise": {
-		"prefix": [
-			"ngResponse",
-			"ngCallAjax"
-		],
+		"prefix": ["ngResponse", "ngCallAjax"],
 		"description": "Angular 1.x Controller calls service promise\n",
 		"body": [
 			"${name}Service.${method}Data.then(function (result) {",

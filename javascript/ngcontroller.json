@@ -1,0 +1,44 @@
+{
+	"Angular $ctrl method": {
+		"prefix": "ngCtrl.method",
+		"description": "Angular 1.x $ctrl method \n",
+		"body": ["\\$ctrl.${fn} = function () {", "\t$0", "};"]
+	},
+	"Angular $ctrl.property": {
+		"prefix": "ngCtrl.property",
+		"description": "Angular 1.x $ctrl\n",
+		"body": ["\\$ctrl.${1:key} = ${value};", "$0"]
+	},
+	"Angular Controller (Simple)": {
+		"prefix": "ngc",
+		"body": [
+			".controller('${1:name}Ctrl', ['${2:\\$scope}', '${3:nameService}', function (${2:\\$scope}, ${3:nameService}) {",
+			"\t$0",
+			"}])",
+			""
+		],
+		"description": "Angular 1.x Controller (Simple)\n"
+	},
+	"Angular Controller": {
+		"prefix": "ngController",
+		"description": "Angular 1.x Controller\n依赖采用 Annotation 形式\n['dependencies', fn(dependencies)]，\n防止代码压缩参数破坏\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular",
+			"\t\t.module('${1:name}')",
+			"\t\t.controller('${2:name}Ctrl', ${2:name}Ctrl)",
+			"",
+			"\t${2:name}Ctrl.\\$inject = ['${3:\\$scope}'];",
+			"",
+			"\tfunction ${2:name}Ctrl(${3:\\$scope}) {",
+			"\t\tvar \\$ctrl = this;",
+			"\t\t$0",
+			"",
+			"\t}",
+			"",
+			"}());"
+		]
+	}
+}

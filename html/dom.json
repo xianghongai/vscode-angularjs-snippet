@@ -1,0 +1,7 @@
+{
+	"ng-click": {
+		"prefix": "ng-click",
+		"body": ["ng-click=\"${1:expression}()\""],
+		"description": "ng-click"
+	}
+}

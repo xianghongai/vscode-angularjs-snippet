@@ -1,6 +1,13 @@
 {
+	"Angular Module (Simple)": {
+		"prefix": "ngm",
+		"body": [
+			"var ${1:myApp} = angular.module('${1:myApp}', [$2]);$0"
+		],
+		"description": "Angular 1.x Module (Simple)\n"
+	},
 	"Angular Module": {
-		"prefix": "ngmodule",
+		"prefix": "ngModule",
 		"description": "Angular 1.x Module\n",
 		"body": [
 			"(function () {",

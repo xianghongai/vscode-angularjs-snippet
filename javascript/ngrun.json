@@ -1,0 +1,33 @@
+{
+	"Angular Run (Simple)": {
+		"prefix": "ngr",
+		"body": [
+			".run(['\\$templateCache', function (\\$templateCache) {",
+			"\t\\$templateCache.put('component.tpl.html', '');",
+			"$0",
+			"})",
+			""
+		],
+		"description": "Angular 1.x Run (Simple)\n"
+	},
+	"Angular Run": {
+		"prefix": "ngRun",
+		"description": "Angular 1.x Run\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular",
+			"\t\t.module('${1:name}')",
+			"\t\t.run(${2:name}Run)",
+			"",
+			"\t${2:name}Run.\\$inject = ['\\$templateCache'];",
+			"",
+			"\tfunction ${2:name}Run(\\$templateCache) {",
+			"\t\t$templateCache.put('component.tpl.html', '');$0",
+			"\t}",
+			"",
+			"}());"
+		]
+	}
+}

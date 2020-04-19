@@ -1,48 +1,48 @@
 {
-  "name": "vscode-angularjs-snippet",
-  "publisher": "NicholasHsiang",
-  "displayName": "AngularJS Snippet",
-  "description": "Code snippets for AngularJS",
-  "icon": "art/icon.png",
-  "version": "0.0.3",
-  "galleryBanner": {
-    "color": "#fff",
-    "theme": "dark"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/loloolooo/vscode-angularjs-snippet/issues"
-  },
-  "homepage": "https://github.com/loloolooo/vscode-angularjs-snippet/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/loloolooo/vscode-angularjs-snippet/blob/master/README.md"
-  },
-  "engines": {
-    "vscode": "^0.12.x"
-  },
-  "categories": [
-    "Snippets"
-  ],
-  "keywords": [
-    "AngularJS Snippet"
-  ],
-  "contributes": {
-    "snippets": [
-      {
-        "language": "javascript",
-        "path": "./snippets/javascript.json"
-      },
-      {
-        "language": "html",
-        "path": "./snippets/javascript.json"
-      }
-    ]
-  },
-  "scripts": {
-    "build": "node merge.js && vsce package"
-  },
-  "devDependencies": {
-    "glob": "^7.1.4"
-  }
+	"name": "vscode-angularjs-snippet",
+	"publisher": "NicholasHsiang",
+	"displayName": "AngularJS Snippet",
+	"description": "Code snippets for AngularJS",
+	"icon": "art/icon.png",
+	"version": "0.0.4",
+	"galleryBanner": {
+		"color": "#fff",
+		"theme": "dark"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/loloolooo/vscode-angularjs-snippet/issues"
+	},
+	"homepage": "https://github.com/loloolooo/vscode-angularjs-snippet/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/loloolooo/vscode-angularjs-snippet/blob/master/README.md"
+	},
+	"engines": {
+		"vscode": "^0.12.x"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"AngularJS Snippet"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./dist/javascript.json"
+			},
+			{
+				"language": "html",
+				"path": "./dist/html.json"
+			}
+		]
+	},
+	"scripts": {
+		"build": "node merge.js && vsce package"
+	},
+	"devDependencies": {
+		"glob": "^7.1.4"
+	}
 }
