@@ -1,0 +1,23 @@
+{
+	"uiSref": {
+		"prefix": ["uisref", "ngsref"],
+		"description": "Angular 1.x UI-Router ui-sref\n",
+		"body": [
+			"ui-sref=\"${1:${2:statename}({${3:param}: ${4:value}})}\" ${5:ui-sref-active=\"${6:cls}_active\"}"
+		]
+	},
+	"uiSrefActiveBy": {
+		"prefix": "uisref.active.abstract",
+		"description": "Angular 1.x UI-Router Given the following template, with 'path' being an abstract state\n",
+		"body": ["ui-sref-active=\"{'active': 'path.*'}\"}"]
+	},
+	"uiSrefActive": {
+		"prefix": "uisref.active",
+		"description": "Angular 1.x UI-Router ui-sref-active=\n",
+		"body": ["ui-sref-active=\"${1:cls}_active\"}"]
+	},
+	"ui-view": {
+		"prefix": "uiview",
+		"body": ["<div ui-view></div>"]
+	}
+}

@@ -1,7 +1,550 @@
 {
-	"ng-click": {
+	"ngApp": {
+		"prefix": "ng-app",
+		"body": ["ng-app=\"${1:myApp}\""],
+		"description": "AngularJS 1.x built-in directive: ng-app\n"
+	},
+	"ngController": {
+		"prefix": "ng-controller",
+		"body": ["ng-controller=\"${1:nameCtrl}\""],
+		"description": "AngularJS 1.x built-in directive: ng-controller\n"
+	},
+	"ngInit": {
+		"prefix": "ng-init",
+		"body": ["ng-init=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-init\n"
+	},
+	"ngInclude": {
+		"prefix": "ng-include",
+		"body": ["ng-include=\"${1:'template.html'}\""],
+		"description": "AngularJS 1.x built-in directive: ng-include\n"
+	},
+	"ngCut": {
+		"prefix": "ng-cut",
+		"body": ["ng-cut=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-cut\n"
+	},
+	"ngCopy": {
+		"prefix": "ng-copy",
+		"body": ["ng-copy=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-copy\n"
+	},
+	"ngPaste": {
+		"prefix": "ng-paste",
+		"body": ["ng-paste=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-paste\n"
+	},
+	"ngBind": {
+		"prefix": "ng-bind",
+		"body": ["ng-bind=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-bind\n"
+	},
+	"ngBindHtml": {
+		"prefix": "ng-bind-html",
+		"body": ["ng-bind-html=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-bind-html\n"
+	},
+	"ngBindTemplate": {
+		"prefix": "ng-bind-template",
+		"body": ["ng-bind-template=\"${1:string}\""],
+		"description": "AngularJS 1.x built-in directive: ng-bind-template\n"
+	},
+	"ngHref": {
+		"prefix": "ng-href",
+		"body": ["ng-href=\"${1:template}\""],
+		"description": "AngularJS 1.x built-in directive: ng-href\n"
+	},
+	"ngSrc": {
+		"prefix": "ng-src",
+		"body": ["ng-src=\"${1:template}\""],
+		"description": "AngularJS 1.x built-in directive: ng-src\n"
+	},
+	"ngSrcset": {
+		"prefix": "ng-srcset",
+		"body": ["ng-srcset=\"${1:template}\""],
+		"description": "AngularJS 1.x built-in directive: ng-srcset\n"
+	},
+	"ngNonBindable": {
+		"prefix": "ng-non-bindable",
+		"body": ["ng-non-bindable "],
+		"description": "AngularJS 1.x built-in directive: ng-non-bindable\n"
+	},
+	"ngStyle": {
+		"prefix": "ng-style",
+		"body": ["ng-style=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-style\n"
+	},
+	"ngClass": {
+		"prefix": "ng-class",
+		"body": ["ng-class=\"{${1:cls}: ${2:expression}}\""],
+		"description": "AngularJS 1.x built-in directive: ng-class\n"
+	},
+	"ngClassEven": {
+		"prefix": "ng-class-even",
+		"body": ["ng-class-even=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-class-even\n"
+	},
+	"ngClassOdd": {
+		"prefix": "ng-class-odd",
+		"body": ["ng-class-odd=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-class-odd\n"
+	},
+	"ngCloak": {
+		"prefix": "ng-cloak",
+		"body": ["ng-cloak "],
+		"description": "AngularJS 1.x built-in directive: ng-cloak\n"
+	},
+	"ngCsp": {
+		"prefix": "ng-csp",
+		"body": ["ng-csp "],
+		"description": "AngularJS 1.x built-in directive: ng-csp\n"
+	},
+	"ngShow": {
+		"prefix": "ng-show",
+		"body": ["ng-show=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-show\n"
+	},
+	"ngHide": {
+		"prefix": "ng-hide",
+		"body": ["ng-hide=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-hide\n"
+	},
+	"ngIf": {
+		"prefix": "ng-if",
+		"body": ["ng-if=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-if\n"
+	},
+	"ngRef": {
+		"prefix": "ng-ref",
+		"body": ["ng-ref=\"${1:string}\""],
+		"description": "AngularJS 1.x built-in directive: ng-ref\n"
+	},
+	"ngModel": {
+		"prefix": "ng-model",
+		"body": ["ng-model=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-model\n"
+	},
+	"ngModelOptions": {
+		"prefix": "ng-model-options",
+		"body": [
+			"ng-model-options=\"{${1:updateOn: 'blur'}, ${2:debounce: 200}}\""
+		],
+		"description": "AngularJS 1.x built-in directive: ng-model-options\n"
+	},
+	"ngOptions": {
+		"prefix": "ng-options",
+		"body": [
+			"ng-options=\"${2:item} as ${2:item}.label for ${2:item} in ${1:items} track by ${2:item}.${3:id}\""
+		],
+		"description": "AngularJS 1.x built-in directive: ng-options\n"
+	},
+	"ngValue": {
+		"prefix": "ng-value",
+		"body": ["ng-value=\"${1:value}\""],
+		"description": "AngularJS 1.x built-in directive: ng-value\n"
+	},
+	"ngPattern": {
+		"prefix": "ng-pattern",
+		"body": ["ng-pattern=\"$1\""],
+		"description": "AngularJS 1.x built-in directive: ng-pattern\n"
+	},
+	"ngFocus": {
+		"prefix": "ng-focus",
+		"body": ["ng-focus=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-focus\n"
+	},
+	"ngBlur": {
+		"prefix": "ng-blur",
+		"body": ["ng-blur=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-blur\n"
+	},
+	"ngChange": {
+		"prefix": "ng-change",
+		"body": ["ng-change=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-change\n"
+	},
+	"ngSubmit": {
+		"prefix": "ng-submit",
+		"body": ["ng-submit=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-submit\n"
+	},
+	"ngOpen": {
+		"prefix": "ng-open",
+		"body": ["ng-open=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-open\n"
+	},
+	"ng-pluralize": {
+		"prefix": "ng-pluralize",
+		"body": "<ng-pluralize count=\"string\" when=\"\" offset=\"\"></ng-pluralize>",
+		"description": "@linK https://docs.angularjs.org/api/ng/directive/ngPluralize"
+	},
+	"ngListDelimiterNgTrim": {
+		"prefix": "ng-list",
+		"body": ["ng-list=\"${1:delimiter}\" ng-trim=\"${2:false}\""],
+		"description": "AngularJS 1.x built-in directive: ng-list\n"
+	},
+	"ngSelected": {
+		"prefix": "ng-selected",
+		"body": ["ng-selected=\"${1:selected}\""],
+		"description": "AngularJS 1.x built-in directive: ng-selected\n"
+	},
+	"ngRequired": {
+		"prefix": "ng-required",
+		"body": ["ng-required=\"${1:required}\""],
+		"description": "AngularJS 1.x built-in directive: ng-required\n"
+	},
+	"ngChecked": {
+		"prefix": "ng-checked",
+		"body": ["ng-checked=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-checked\n"
+	},
+	"ngDisabled": {
+		"prefix": "ng-disabled",
+		"body": ["ng-disabled=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-disabled\n"
+	},
+	"ngReadonly": {
+		"prefix": "ng-readonly",
+		"body": ["ng-readonly=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-readonly\n"
+	},
+	"ngMaxlength": {
+		"prefix": "ng-maxlength",
+		"body": ["ng-maxlength=\"${1:maxlength}\""],
+		"description": "AngularJS 1.x built-in directive: ng-maxlength\n"
+	},
+	"ngMinlength": {
+		"prefix": "ng-minlength",
+		"body": ["ng-minlength=\"${1:minlength}\""],
+		"description": "AngularJS 1.x built-in directive: ng-minlength\n"
+	},
+	"ngClick": {
 		"prefix": "ng-click",
-		"body": ["ng-click=\"${1:expression}()\""],
-		"description": "ng-click"
+		"body": ["ng-click=\"${1:handleAction}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-click\n"
+	},
+	"ngDblclick": {
+		"prefix": "ng-dblclick",
+		"body": ["ng-dblclick=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-dblclick\n"
+	},
+	"ngOnEventName": {
+		"prefix": "ng-on-event-name",
+		"body": ["ng-on-event_name=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-on-event-name\n"
+	},
+	"ngKeydown": {
+		"prefix": "ng-keydown",
+		"body": ["ng-keydown=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-keydown\n"
+	},
+	"ngKeypress": {
+		"prefix": "ng-keypress",
+		"body": ["ng-keypress=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-keypress\n"
+	},
+	"ngKeyup": {
+		"prefix": "ng-keyup",
+		"body": ["ng-keyup=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-keyup\n"
+	},
+	"ngMousedown": {
+		"prefix": "ng-mousedown",
+		"body": ["ng-mousedown=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-mousedown\n"
+	},
+	"ngMouseenter": {
+		"prefix": "ng-mouseenter",
+		"body": ["ng-mouseenter=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-mouseenter\n"
+	},
+	"ngMouseleave": {
+		"prefix": "ng-mouseleave",
+		"body": ["ng-mouseleave=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-mouseleave\n"
+	},
+	"ngMousemove": {
+		"prefix": "ng-mousemove",
+		"body": ["ng-mousemove=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-mousemove\n"
+	},
+	"ngMouseover": {
+		"prefix": "ng-mouseover",
+		"body": ["ng-mouseover=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-mouseover\n"
+	},
+	"ngMouseup": {
+		"prefix": "ng-mouseup",
+		"body": ["ng-mouseup=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-mouseup\n"
+	},
+	"ngSwipeLeft": {
+		"prefix": "ng-swipe-left",
+		"body": ["ng-swipe-left=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-swipe-left\n"
+	},
+	"ngSwipeRight": {
+		"prefix": "ng-swipe-right",
+		"body": ["ng-swipe-right=\"${1:fn}()\""],
+		"description": "AngularJS 1.x built-in directive: ng-swipe-right\n"
+	},
+	"ngRepeat": {
+		"prefix": "ng-repeat",
+		"body": ["ng-repeat=\"${2:item} in ${1:items} track by ${3:\\$index}\""],
+		"description": "AngularJS 1.x built-in directive: ng-repeat\n"
+	},
+	"ngRepeatObjects": {
+		"prefix": "ng-repeat-objects",
+		"body": ["ng-repeat=\"(${1:key}, ${1:value}) in ${1:Objects}\""],
+		"description": "AngularJS 1.x built-in directive: ng-repeat-objects\n"
+	},
+	"ngRepeatStart": {
+		"prefix": "ng-repeat-start",
+		"body": [
+			"ng-repeat-start=\"${2:item} in ${1:items} track by ${3:\\$index}\""
+		],
+		"description": "AngularJS 1.x built-in directive: ng-repeat-start\n"
+	},
+	"ngRepeatEnd": {
+		"prefix": "ng-repeat-end",
+		"body": ["ng-repeat-end "],
+		"description": "AngularJS 1.x built-in directive: ng-repeat-end\n"
+	},
+	"ngSwitchOn": {
+		"prefix": "ng-switch-on",
+		"body": ["ng-switch on=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-switch-on\n"
+	},
+	"ngSwitchWhen": {
+		"prefix": "ng-switch-when",
+		"body": ["ng-switch-when=\"${1:matchValue}\""],
+		"description": "AngularJS 1.x built-in directive: ng-switch-when\n"
+	},
+	"ngSwitchDefault": {
+		"prefix": "ng-switch-default",
+		"body": ["ng-switch-default "],
+		"description": "AngularJS 1.x built-in directive: ng-switch-default\n"
+	},
+	"ng-message(tpl)": {
+		"prefix": "ng-message(tpl)",
+		"body": [
+			"<div",
+			"  class=\"validation-help\"",
+			"  ng-messages=\"expression\"",
+			"  ng-show=\"!${1:formName}.${2:inputName}.\\$pristine && ${1:formName}.${2:inputName}.\\$dirty && ${1:formName}.${2:inputName}.\\$invalid\"",
+			">",
+			"\t<p ng-message=\"${3:validationName}\">${4:message}</p>",
+			"\t<p ng-message=\"${5:validationName, validationName}\">${6:message}</p>",
+			"\t<p ng-message-default>${0:This field has an input error.}</p>",
+			"</div>"
+		]
+	},
+	"ngMessages": {
+		"prefix": "ng-messages",
+		"body": ["ng-messages=\"${1:expression}\""],
+		"description": "AngularJS 1.x built-in directive: ng-messages\n"
+	},
+	"ngMessagesInclude": {
+		"prefix": "ng-messages-include",
+		"body": ["ng-messages-include=\"${1:tpl}\""],
+		"description": "AngularJS 1.x built-in directive: ng-messages-include\n"
+	},
+	"ngMessage": {
+		"prefix": "ng-message",
+		"body": ["ng-message=\"${1:stringValue}\""],
+		"description": "AngularJS 1.x built-in directive: ng-message\n"
+	},
+	"ngMessageExp": {
+		"prefix": "ng-message-exp",
+		"body": [
+			"ng-message-exp=\"${1:['required', 'minlength', 'maxlength', 'pattern']}\""
+		],
+		"description": "AngularJS 1.x built-in directive: ng-message-exp\n"
+	},
+	"ngMessageDefault": {
+		"prefix": "ng-message-default",
+		"body": ["ng-message-default "],
+		"description": "AngularJS 1.x built-in directive: ng-message-default\n"
+	},
+	"ngTemplate": {
+		"prefix": "ngTemplate",
+		"body": [
+			"<script",
+			"\ttype=\"text/ng-template\"",
+			"\tid=\"${1:name}.template.html\">",
+			"\t$0",
+			"</script>",
+			""
+		],
+		"description": "AngualarJS 1.x ng-template"
+	},
+	"ngInput.checkbox": {
+		"prefix": "ngInput.checkbox",
+		"body": [
+			"<input type=\"checkbox\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[ng-true-value=\"expression\"]",
+			"\t[ng-false-value=\"expression\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
+	},
+	"ngInput.date": {
+		"prefix": "ngInput.date",
+		"body": [
+			"<input type=\"date\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[min=\"string\"]",
+			"\t[max=\"string\"]",
+			"\t[ng-min=\"\"]",
+			"\t[ng-max=\"\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
+	},
+	"ngInput.email": {
+		"prefix": "ngInput.email",
+		"body": [
+			"<input type=\"email\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-minlength=\"number\"]",
+			"\t[ng-maxlength=\"number\"]",
+			"\t[pattern=\"string\"]",
+			"\t[ng-pattern=\"string\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
+	},
+	"ngInput.month": {
+		"prefix": "ngInput.month",
+		"body": [
+			"<input type=\"month\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[min=\"string\"]",
+			"\t[max=\"string\"]",
+			"\t[ng-min=\"\"]",
+			"\t[ng-max=\"\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
+	},
+	"ngInput.number": {
+		"prefix": "ngInput.number",
+		"body": [
+			"<input type=\"number\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[min=\"string\"]",
+			"\t[max=\"string\"]",
+			"\t[ng-min=\"string\"]",
+			"\t[ng-max=\"string\"]",
+			"\t[step=\"string\"]",
+			"\t[ng-step=\"string\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-minlength=\"number\"]",
+			"\t[ng-maxlength=\"number\"]",
+			"\t[pattern=\"string\"]",
+			"\t[ng-pattern=\"string\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
+	},
+	"ngInput.radio": {
+		"prefix": "ngInput.radio",
+		"body": [
+			"<input type=\"radio\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\tvalue=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[ng-change=\"string\"]",
+			"\tng-value=\"string\">",
+			""
+		]
+	},
+	"ngInput.text": {
+		"prefix": "ngInput.text",
+		"body": [
+			"<input type=\"text\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-minlength=\"number\"]",
+			"\t[ng-maxlength=\"number\"]",
+			"\t[pattern=\"string\"]",
+			"\t[ng-pattern=\"string\"]",
+			"\t[ng-change=\"string\"]",
+			"\t[ng-trim=\"boolean\"]>",
+			""
+		]
+	},
+	"ngInput.time": {
+		"prefix": "ngInput.time",
+		"body": [
+			"<input type=\"time\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[min=\"string\"]",
+			"\t[max=\"string\"]",
+			"\t[ng-min=\"\"]",
+			"\t[ng-max=\"\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
+	},
+	"ngInput.url": {
+		"prefix": "ngInput.url",
+		"body": [
+			"<input type=\"url\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-minlength=\"number\"]",
+			"\t[ng-maxlength=\"number\"]",
+			"\t[pattern=\"string\"]",
+			"\t[ng-pattern=\"string\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
+	},
+	"ngInput.week": {
+		"prefix": "ngInput.week",
+		"body": [
+			"<input type=\"week\"",
+			"\tclass=\"form-control\"",
+			"\tng-model=\"string\"",
+			"\t[name=\"string\"]",
+			"\t[min=\"string\"]",
+			"\t[max=\"string\"]",
+			"\t[ng-min=\"\"]",
+			"\t[ng-max=\"\"]",
+			"\t[required=\"string\"]",
+			"\t[ng-required=\"string\"]",
+			"\t[ng-change=\"string\"]>",
+			""
+		]
 	}
 }

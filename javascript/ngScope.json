@@ -1,0 +1,161 @@
+{
+	"Angular $scope.property": {
+		"prefix": "ngScope.property",
+		"description": "Angular 1.x $scope\n",
+		"body": ["\\$scope.${1:key} = ${2:value};"]
+	},
+	"Angular $scope method": {
+		"prefix": ["ngScope.fn", "ngScope.method"],
+		"description": "Angular 1.x $scope method \n",
+		"body": ["\\$scope.${fn} = function () {", "\t$0", "};"]
+	},
+	"$scope.$new()": {
+		"prefix": "ngScope.$new()",
+		"body": "\\$scope.\\$new(${1:isolate}, ${2:parent});"
+	},
+	"$scope.$watch()": {
+		"prefix": "ngScope.$watch()",
+		"body": "\\$scope.\\$watch(${1:watchExpression}, ${2:listener}, ${3:objectEquality});"
+	},
+	"$scope.$watchGroup()": {
+		"prefix": "ngScope.$watchGroup()",
+		"body": "\\$scope.\\$watchGroup(${1:watchExpressions}, ${2:listener});"
+	},
+	"$scope.$watchCollection()": {
+		"prefix": "ngScope.$watchCollection()",
+		"body": "\\$scope.\\$watchCollection(${1:obj}, ${2:listener});"
+	},
+	"$scope.$digest()": {
+		"prefix": "ngScope.$digest()",
+		"body": "\\$scope.\\$digest();"
+	},
+	"$scope.$suspend()": {
+		"prefix": "ngScope.$suspend()",
+		"body": "\\$scope.\\$suspend();"
+	},
+	"$scope.$isSuspended()": {
+		"prefix": "ngScope.$isSuspended()",
+		"body": "\\$scope.\\$isSuspended();"
+	},
+	"$scope.$resume()": {
+		"prefix": "ngScope.$resume()",
+		"body": "\\$scope.\\$resume();"
+	},
+	"$scope.$destroy()": {
+		"prefix": "ngScope.$destroy()",
+		"body": "\\$scope.\\$destroy();"
+	},
+	"$scope.$eval()": {
+		"prefix": "ngScope.$eval()",
+		"body": "\\$scope.\\$eval(${1:expression}, ${2:locals});"
+	},
+	"$scope.$evalAsync()": {
+		"prefix": "ngScope.$evalAsync()",
+		"body": "\\$scope.\\$evalAsync(${1:expression}, ${2:locals});"
+	},
+	"$scope.$apply()": {
+		"prefix": "ngScope.$apply()",
+		"body": [
+			"// change any model outside of the Angular context,",
+			"// to inform Angular of the changes by calling \\$apply() manually",
+			"\\$scope.\\$apply(${1:fn});"
+		]
+	},
+	"$scope.$applyAsync()": {
+		"prefix": "ngScope.$applyAsync()",
+		"body": "\\$scope.\\$applyAsync(${1:exp});"
+	},
+	"$scope.$on()": {
+		"prefix": "ngScope.$on()",
+		"body": "\\$scope.\\$on(${1:name}, ${2:listener});"
+	},
+	"$scope.$emit()": {
+		"prefix": "ngScope.$emit()",
+		"body": "\\$scope.\\$emit(${1:name}, ${2:args});"
+	},
+	"$scope.$broadcast()": {
+		"prefix": "ngScope.$broadcast()",
+		"body": "\\$scope.\\$broadcast(${1:name}, ${2:args}); "
+	},
+	"$scope.$id": {
+		"prefix": "ngScope.$id",
+		"body": "\\$scope.\\$id"
+	},
+	"$scope.$parent": {
+		"prefix": "ngScope.$parent",
+		"body": "\\$scope.\\$parent"
+	},
+	"$scope.$root": {
+		"prefix": "ngScope.$root",
+		"body": "\\$scope.\\$root"
+	},
+	"Angular rootScope": {
+		"prefix": ["ngrootScope", "ngrScope"],
+		"description": "Angular 1.x $rootScope\n",
+		"body": ["\\$rootScope.${1:key} = ${2:value};"]
+	},
+	"Angular $emit": {
+		"prefix": "ngEmit",
+		"description": "Angular 1.x $emit",
+		"body": [
+			"\\$scope.${onEmitEvent} = function () {",
+			"\t\\$scope.\\$emit('${EMIT_EVENT_NAME}', ${params});",
+			"};"
+		]
+	},
+	"Angular $broadcast": {
+		"prefix": "ngBroadcast",
+		"description": "Angular 1.x $broadcast",
+		"body": [
+			"\\$scope.${onBroadcastEvent} = function () {",
+			"\t\\$scope.\\$broadcast('${BROADCAST_EVENT_NAME}', ${params});",
+			"};"
+		]
+	},
+	"Angular $on": {
+		"prefix": "ngOn",
+		"description": "Angular 1.x $on",
+		"body": [
+			"var clearListener = \\$scope.\\$on('${EVENT_NAME}', function (event, params) {",
+			"\tconsole.dir(event);",
+			"\tconsole.dir(params);$0",
+			"});"
+		]
+	},
+	"Angular $safeApply": {
+		"prefix": "ngSafeApply",
+		"description": "Angular 1.x $safeApply",
+		"body": [
+			"function safeApply(\\$scope, fn) {",
+			"\t\\$scope.\\$\\$phase || \\$scope.\\$root.\\$\\$phase ? fn() : \\$scope.\\$apply(fn);",
+			"}"
+		]
+	},
+	"$scope.$watch": {
+		"prefix": "ngWatch",
+		"body": [
+			"var clearWatch = \\$scope.\\$watch('${1:watchExpression}', function(newValue, oldValue) {",
+			"\t$0",
+			"});"
+		],
+		"description": "$scope.$watch"
+	},
+	"$scope.$watchGroup": {
+		"prefix": "ngWatchGroup",
+		"body": [
+			"var clearWatch = \\$scope.\\$watchGroup(['${1:watchExpressions}'], function(newValue, oldValue) {",
+			"\t$0",
+			"});"
+		],
+		"description": "$scope.$watchGroup"
+	},
+	"$scope.$watchCollection": {
+		"prefix": "ngWatchCollection",
+		"body": [
+			"var clearWatch = \\$scope.\\$watchCollection('${1:watchExpression}', function(newCollection, oldCollection) {",
+			"\t$0",
+			"});"
+		],
+		"description": "$scope.$watchCollection"
+	}
+}

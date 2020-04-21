@@ -1,0 +1,82 @@
+{
+	"Angular UI-Router state": {
+		"prefix": "ngState",
+		"description": "Angular 1.x UI-Router state\n",
+		"body": [
+			"var state${1:Name} = {",
+			"\tname: '${2:state}',",
+			"\turl: '${3:path/:id?query}',",
+			"\tparams: {",
+			"\t\t${4:param}: null",
+			"\t},",
+			"\ttemplateUrl: '${5:template}.html',",
+			"\tcontroller: '${6:Controller} as ${7:\\$ctrl}'",
+			"};"
+		]
+	},
+	"Angular UI-Router state(Resolve Data)": {
+		"prefix": "ngState.resolve",
+		"description": "Angular 1.x UI-Router state(Resolve Data)\n",
+		"body": [
+			"var state${1:Name} = {",
+			"\tname: '${2:state}',",
+			"\turl: '${3:path/:id?query}',",
+			"\ttemplateUrl: '${4:template}.html',",
+			"\tcontroller: '${5:Controller} as ${6:\\$ctrl}',",
+			"\tresolve: {",
+			"\t\t${7:obj}: ['\\$stateParams', '${8:depService}', function (\\$stateParams, ${8:depService}) { ",
+			"\t\t\treturn ${8:depService}.${9:getResources}(\\$stateParams.${10:id});",
+			"\t\t}]",
+			"\t}",
+			"};"
+		]
+	},
+	"Angular UI-Router Route to Component(Resolve Data)": {
+		"prefix": "ngState.component",
+		"description": "Angular 1.x UI-Router Route to Component\n",
+		"body": [
+			"var state${1:Name} = {",
+			"\tname: '${2:state}',",
+			"\turl: '${3:url}',",
+			"\tcomponent: '${4:component}',",
+			"\tresolve: {",
+			"\t\t${5:obj}: ['\\$stateParams', '${7:depService}', function (\\$stateParams, ${7:depService}) { ",
+			"\t\t\treturn ${7:depService}.${8:getResources}(\\$stateParams.${9:id});",
+			"\t\t}]",
+			"\t}",
+			"};"
+		]
+	},
+	"$state.go": {
+		"prefix": ["ngState.go()", "nggo"],
+		"body": ["\\$state.go('${1:state}'${2:, {${3:param}: ${4:value}}});"]
+	},
+	"$state.get()": {
+		"prefix": "ngState.get()",
+		"body": "\\$state.get(${stateOrName}, ${context});"
+	},
+	"$state.includes()": {
+		"prefix": "ngState.includes()",
+		"body": "\\$state.includes(${stateOrName}, ${params}, ${options});"
+	},
+	"$state.is()": {
+		"prefix": "ngState.is()",
+		"body": "\\$state.is(${stateOrName}, ${params}, ${options});"
+	},
+	"$state.reload()": {
+		"prefix": "ngState.reload()",
+		"body": "\\$state.reload(${state});"
+	},
+	"$state.transitionTo()": {
+		"prefix": "ngState.transitionTo()",
+		"body": "\\$state.transitionTo(${to}, ${toParams}, ${options});"
+	},
+	"$urlRouterProvider.otherwise()": {
+		"prefix": "ngState.otherwise()",
+		"body": "\\$urlRouterProvider.otherwise('/${index}');"
+	},
+	"$urlRouterProvider.when()": {
+		"prefix": "ngState.when()",
+		"body": "\\$urlRouterProvider.when(${what}, ${handler});"
+	}
+}

@@ -9,6 +9,7 @@ const outputPath = "./dist/";
 const type = [
 	{ name: "javascript", path: "javascript/*.json" },
 	{ name: "html", path: "html/*.json" },
+	{ name: "css", path: "css/*.json" },
 ];
 
 type.forEach((item) => {

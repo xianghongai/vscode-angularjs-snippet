@@ -3,9 +3,8 @@
 		"prefix": "ngr",
 		"body": [
 			".run(['\\$templateCache', function (\\$templateCache) {",
-			"\t\\$templateCache.put('component.tpl.html', '');",
-			"$0",
-			"})",
+			"\t\\$templateCache.put('${1:name}.template.html', '${0:content of the template}');",
+			"}])",
 			""
 		],
 		"description": "Angular 1.x Run (Simple)\n"
@@ -24,7 +23,7 @@
 			"\t${2:name}Run.\\$inject = ['\\$templateCache'];",
 			"",
 			"\tfunction ${2:name}Run(\\$templateCache) {",
-			"\t\t$templateCache.put('component.tpl.html', '');$0",
+			"\t\t\\$templateCache.put('${3:name}.template.html', '${0:content of the template}');",
 			"\t}",
 			"",
 			"}());"

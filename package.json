@@ -4,7 +4,7 @@
 	"displayName": "AngularJS Snippet",
 	"description": "Code snippets for AngularJS",
 	"icon": "art/icon.png",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"galleryBanner": {
 		"color": "#fff",
 		"theme": "dark"
@@ -36,6 +36,18 @@
 			{
 				"language": "html",
 				"path": "./dist/html.json"
+			},
+			{
+				"language": "css",
+				"path": "./dist/css.json"
+			},
+			{
+				"language": "scss",
+				"path": "./dist/css.json"
+			},
+			{
+				"language": "less",
+				"path": "./dist/css.json"
 			}
 		]
 	},

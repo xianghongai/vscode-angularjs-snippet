@@ -1,0 +1,118 @@
+{
+	"ngModel.$render()": {
+		"prefix": "ngModel.method.$render",
+		"body": "\\${1:ngModel}.method.\\$render();"
+	},
+	"ngModel.$isEmpty()": {
+		"prefix": "ngModel.method.$isEmpty",
+		"body": "\\${1:ngModel}.method.\\$isEmpty(${2:value});"
+	},
+	"ngModel.$setPristine()": {
+		"prefix": "ngModel.method.$setPristine",
+		"body": "\\${1:ngModel}.method.\\$setPristine();"
+	},
+	"ngModel.$setDirty()": {
+		"prefix": "ngModel.method.$setDirty",
+		"body": "\\${1:ngModel}.method.\\$setDirty();"
+	},
+	"ngModel.$setUntouched()": {
+		"prefix": "ngModel.method.$setUntouched",
+		"body": "\\${1:ngModel}.method.\\$setUntouched();"
+	},
+	"ngModel.$setTouched()": {
+		"prefix": "ngModel.method.$setTouched",
+		"body": "\\${1:ngModel}.method.\\$setTouched();"
+	},
+	"ngModel.$rollbackViewValue()": {
+		"prefix": "ngModel.method.$rollbackViewValue",
+		"body": "\\${1:ngModel}.method.\\$rollbackViewValue();"
+	},
+	"ngModel.$validate()": {
+		"prefix": "ngModel.method.$validate",
+		"body": "\\${1:ngModel}.method.\\$validate();"
+	},
+	"ngModel.$commitViewValue()": {
+		"prefix": "ngModel.method.$commitViewValue",
+		"body": "\\${1:ngModel}.method.\\$commitViewValue();"
+	},
+	"ngModel.$setViewValue()": {
+		"prefix": "ngModel.method.$setViewValue",
+		"body": "\\${1:ngModel}.method.\\$setViewValue(${2:value}, ${3:trigger});"
+	},
+	"ngModel.$overrideModelOptions()": {
+		"prefix": "ngModel.method.$overrideModelOptions",
+		"body": "\\${1:ngModel}.method.\\$overrideModelOptions(options);"
+	},
+	"ngModel.$processModelValue()": {
+		"prefix": "ngModel.method.$processModelValue",
+		"body": "\\${1:ngModel}.method.\\$processModelValue();"
+	},
+	"ngModel.$setValidity()": {
+		"prefix": "ngModel.method.$setValidity",
+		"body": "\\${1:ngModel}.method.\\$setValidity(${2:validationErrorKey}, ${3:isValid}); "
+	},
+	"ngModel.$viewValue": {
+		"prefix": "ngModel.$viewValue",
+		"body": "\\${1:ngModel}.\\$viewValue"
+	},
+	"ngModel.$modelValue": {
+		"prefix": "ngModel.$modelValue",
+		"body": "\\${1:ngModel}.\\$modelValue"
+	},
+	"ngModel.$parsers": {
+		"prefix": "ngModel.$parsers",
+		"body": "\\${1:ngModel}.\\$parsers"
+	},
+	"ngModel.$formatters": {
+		"prefix": "ngModel.$formatters",
+		"body": "\\${1:ngModel}.\\$formatters"
+	},
+	"ngModel.$validators": {
+		"prefix": "ngModel.$validators",
+		"body": "\\${1:ngModel}.\\$validators"
+	},
+	"ngModel.$asyncValidators": {
+		"prefix": "ngModel.$asyncValidators",
+		"body": "\\${1:ngModel}.\\$asyncValidators"
+	},
+	"ngModel.$viewChangeListeners": {
+		"prefix": "ngModel.$viewChangeListeners",
+		"body": "\\${1:ngModel}.\\$viewChangeListeners"
+	},
+	"ngModel.$error": {
+		"prefix": "ngModel.$error",
+		"body": "\\${1:ngModel}.\\$error"
+	},
+	"ngModel.$pending": {
+		"prefix": "ngModel.$pending",
+		"body": "\\${1:ngModel}.\\$pending"
+	},
+	"ngModel.$untouched": {
+		"prefix": "ngModel.$untouched",
+		"body": "\\${1:ngModel}.\\$untouched"
+	},
+	"ngModel.$touched": {
+		"prefix": "ngModel.$touched",
+		"body": "\\${1:ngModel}.\\$touched"
+	},
+	"ngModel.$pristine": {
+		"prefix": "ngModel.$pristine",
+		"body": "\\${1:ngModel}.\\$pristine"
+	},
+	"ngModel.$dirty": {
+		"prefix": "ngModel.$dirty",
+		"body": "\\${1:ngModel}.\\$dirty"
+	},
+	"ngModel.$valid": {
+		"prefix": "ngModel.$valid",
+		"body": "\\${1:ngModel}.\\$valid"
+	},
+	"ngModel.$invalid": {
+		"prefix": "ngModel.$invalid",
+		"body": "\\${1:ngModel}.\\$invalid"
+	},
+	"ngModel.$name": {
+		"prefix": "ngModel.$name",
+		"body": "\\${1:ngModel}.\\$name"
+	}
+}
