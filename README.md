@@ -340,25 +340,32 @@ ng-app
 ng-controller
 ng-init
 ng-include
+
 ng-cut
 ng-copy
 ng-paste
+
 ng-bind
 ng-bind-html
 ng-bind-template
 ng-non-bindable
+
 ng-href
 ng-src
 ng-srcset
+
 ng-style
 ng-class
 ng-class-even
 ng-class-odd
+
 ng-cloak
 ng-csp
+
 ng-show
 ng-hide
 ng-if
+
 ng-ref
 ng-model
 ng-model-options
@@ -375,6 +382,7 @@ ng-disabled
 ng-readonly
 ng-maxlength
 ng-minlength
+
 ng-click
 ng-submit
 ng-dblclick
@@ -382,17 +390,21 @@ ng-change
 ng-focus
 ng-blur
 ng-on-event-name
+
 ng-keydown
 ng-keypress
 ng-keyup
+
 ng-mousedown
 ng-mouseenter
 ng-mouseleave
 ng-mousemove
 ng-mouseover
 ng-mouseup
+
 ng-swipe-left
 ng-swipe-right
+
 ng-repeat
 ng-repeat-objects
 ng-repeat-start
@@ -400,6 +412,7 @@ ng-repeat-end
 ng-switch-on
 ng-switch-when
 ng-switch-default
+
 ng-messages
 ng-messages-include
 ng-message
@@ -467,3 +480,5 @@ ngtranslate/ngi18n
 - [John Papa AngularJS style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md).
 - [Alexander Sage](https://github.com/sagea/vscode-angular1-snippets)
 - [Angular UI](https://angular-ui.github.io/)
+
+BY: xianghongai@gmail.com
