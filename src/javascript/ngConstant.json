@@ -1,0 +1,21 @@
+{
+	"Angular Constant (Simple)": {
+		"prefix": "ngconst",
+		"description": "Angular 1.x Constant (Simple)\n",
+		"body": [".constant('${1:CONSTANT}', ${2:Value})"]
+	},
+	"Angular Constant": {
+		"prefix": "ngConstant",
+		"description": "Angular 1.x Constant\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular",
+			"\t\t.module('${1:name}')",
+			"\t\t.constant('${2:CONSTANT}', ${3:Value});",
+			"",
+			"}());"
+		]
+	}
+}

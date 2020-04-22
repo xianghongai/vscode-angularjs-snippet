@@ -1,11 +1,11 @@
 {
 	"Angular $scope.property": {
-		"prefix": "ngScope.property",
+		"prefix": ["ngsp", "ngScope.property"],
 		"description": "Angular 1.x $scope\n",
 		"body": ["\\$scope.${1:key} = ${2:value};"]
 	},
 	"Angular $scope method": {
-		"prefix": ["ngScope.fn", "ngScope.method"],
+		"prefix": ["ngsm", "ngScope.method"],
 		"description": "Angular 1.x $scope method \n",
 		"body": ["\\$scope.${fn} = function () {", "\t$0", "};"]
 	},

@@ -1,0 +1,35 @@
+{
+	"Angular Module (Simple)": {
+		"prefix": "ngm",
+		"body": ["var ${1:myApp} = angular.module('${1:myApp}', [$2]);$0"],
+		"description": "Angular 1.x Module (Simple)\n"
+	},
+	"Angular Module": {
+		"prefix": "ngModule",
+		"description": "Angular 1.x Module\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular.module('${Module}', [",
+			"\t\t/* 1. Main App Module */",
+			"\t\t/* 1.1 Shared modules(2) */",
+			"\t\t",
+			"\t\t/* 1.2 Feature areas(3) */",
+			"\t\t",
+			"\t\t/* 2. Cross App Modules */",
+			"\t\t",
+			"\t\t/* 2.1 Angular modules */",
+			"\t\t",
+			"\t\t/* 2.2 Cross-app modules */",
+			"\t\t",
+			"\t\t/* 2.3 3rd-party modules */",
+			"\t\t",
+			"\t\t/* 3. App Feature Modules */",
+			"\t\t$0",
+			"\t]);",
+			"",
+			"}());"
+		]
+	}
+}

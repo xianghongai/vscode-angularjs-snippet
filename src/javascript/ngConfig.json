@@ -1,0 +1,31 @@
+{
+	"Angular Config (Simple)": {
+		"prefix": "ngcon",
+		"body": [
+			".config(['${1:\\$stateProvider}', '${2:\\$urlRouterProvider}', function (${1:\\$stateProvider}, ${2:\\$urlRouterProvider}) {",
+			"\t$0",
+			"}])"
+		],
+		"description": "Angular 1.x Config (Simple)\n"
+	},
+	"Angular Config": {
+		"prefix": "ngConfig",
+		"description": "Angular 1.x Config\n",
+		"body": [
+			"(function () {",
+			"\t'use strict';",
+			"",
+			"\tangular",
+			"\t\t.module('${1:name}')",
+			"\t\t.config(${2:config}Config);",
+			"",
+			"\t${2:config}Config.\\$inject = [];",
+			"",
+			"\tfunction ${2:config}Config() {",
+			"\t\t$0",
+			"\t}",
+			"",
+			"}());"
+		]
+	}
+}

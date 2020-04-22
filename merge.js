@@ -7,12 +7,12 @@ const output = {};
 const outputPath = "./dist/";
 
 const type = [
-	{ name: "javascript", path: "javascript/*.json" },
-	{ name: "html", path: "html/*.json" },
-	{ name: "css", path: "css/*.json" },
+	{ name: "javascript", path: "src/javascript/*.json" },
+	{ name: "html", path: "src/html/*.json" },
+	{ name: "css", path: "src/css/*.json" }
 ];
 
-type.forEach((item) => {
+type.forEach(item => {
 	package(item);
 });
 
@@ -27,7 +27,7 @@ function package({ name, path }) {
 
 			// console.log(`${outputPath} exists, and it is writable`);
 
-			files.forEach((filename) => {
+			files.forEach(filename => {
 				const contents = JSON.parse(fs.readFileSync(filename, "utf8"));
 				Object.assign(output, contents);
 			});
