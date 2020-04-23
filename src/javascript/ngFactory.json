@@ -20,7 +20,7 @@
 			"",
 			"\tangular",
 			"\t\t.module('${1:name}')",
-			"\t\t.factory('${2:name}Factory', ${2:name}Factory)",
+			"\t\t.factory('${2:name}Factory', ${2:name}Factory);",
 			"",
 			"\t${2:name}Factory.\\$inject = [];",
 			"",

@@ -36,7 +36,7 @@
 			"\tfunction ${2}() {",
 			"\t\tvar directive = {",
 			"\t\t\tlink: link,",
-			"\t\t\trestrict: 'EA'",
+			"\t\t\trestrict: 'EA',",
 			"\t\t\tscope: {",
 			"\t\t\t\toneWay: '<?', // one-way",
 			"\t\t\t\ttwoWay: '=?',",

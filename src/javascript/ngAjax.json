@@ -257,17 +257,20 @@
 		]
 	},
 	"Angular Controller calls service promise": {
-		"prefix": ["api", "ngAjax"],
+		"prefix": [
+			"api",
+			"ngAjax"
+		],
 		"description": "Angular 1.x Controller calls service promise\n",
 		"body": [
-			"${name}Service.${method}Resource.then(function (response) {",
-			"\tif (response.data.code == '200') {",
-			"\t\t\\$scope.${data} = response.data.data;",
-			"\t\t$0",
-			"\t}",
-			"}).catch(function (error) {",
-			"",
-			"});",
+			"${1:${TM_FILENAME_BASE/^(.)([a-zA-Z0-9]*)([_\\W])(.*)/${1:/downcase}${2}${4:/pascalcase}/}}Service",
+			"\t.${2:method}Resource(${3:requestParam})",
+			"\t.then(function (response) {",
+			"\t\tif (response.data.code == '200') {",
+			"\t\t\t\\$scope.${4:data} = response.data.data;",
+			"\t\t\t$0",
+			"\t\t}",
+			"\t}).catch(function (error) {});",
 			""
 		]
 	},

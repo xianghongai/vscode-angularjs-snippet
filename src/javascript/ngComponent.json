@@ -40,29 +40,20 @@
 			"(function () {",
 			"\t'use strict';",
 			"",
-			"\tangular",
-			"\t\t.module('${1:name}')",
-			"\t\t.component('${2:${TM_FILENAME_BASE/^(.)([a-zA-Z0-9]*)([_\\W])(.*)/${1:/downcase}${2}${4:/pascalcase}/}}', ${2}());",
-			"",
+			"\tangular.module('${1:name}').component('${2:${TM_FILENAME_BASE/^(.)([a-zA-Z0-9]*)([_\\W])(.*)/${1:/downcase}${2}${4:/pascalcase}/}}', ${2}());",
 			"",
 			"\tfunction ${2}() {",
-			"",
 			"\t\t${2}Controller.\\$inject = [];",
 			"",
 			"\t\tfunction ${2}Controller() {",
 			"\t\t\tvar \\$ctrl = this;",
 			"",
-			"\t\t\t\\$ctrl.\\$onInit = function () {",
-			"\t\t\t\t$0",
-			"\t\t\t};",
+			"\t\t\t\\$ctrl.\\$onInit = function () {$0};",
 			"",
-			"\t\t\t\\$ctrl.\\$onChanges = function (changes) {",
-			"\t\t\t\t",
-			"\t\t\t};",
+			"\t\t\t\\$ctrl.\\$onChanges = function (changes) {};",
 			"",
-			"\t\t\t\\$ctrl.\\$onDestroy = function () {",
-			"\t\t\t\t",
-			"\t\t\t};",
+			"\t\t\t\\$ctrl.\\$onDestroy = function () {};",
+			"\t\t}",
 			"",
 			"\t\treturn {",
 			"\t\t\ttemplateUrl: '${3:$TM_FILENAME_BASE}.template.html',",
@@ -73,10 +64,31 @@
 			"\t\t\t\tonEvent: '&?', // on-event",
 			"\t\t\t},",
 			"\t\t\tcontroller: ${2}Controller,",
-			"\t\t}",
+			"\t\t};",
 			"\t}",
-			"",
-			"}());"
+			"})();",
+			""
 		]
+	},
+	"ngCtrl.$onInit()": {
+		"prefix": [
+			"ngCtrl.$onInit()",
+			"$ctrl.$onInit()"
+		],
+		"body": "\\$ctrl.\\$onInit = function () {$0};"
+	},
+	"ngCtrl.$onChanges()": {
+		"prefix": [
+			"ngCtrl.$onChanges()",
+			"$ctrl.$onChanges()"
+		],
+		"body": "\\$ctrl.\\$onChanges = function (changes) {$0};"
+	},
+	"ngCtrl.$onDestroy()": {
+		"prefix": [
+			"ngCtrl.$onDestroy()",
+			"$ctrl.$onDestroy()"
+		],
+		"body": "\\$ctrl.\\$onDestroy = function () {$0};"
 	}
 }
