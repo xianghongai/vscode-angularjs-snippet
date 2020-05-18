@@ -191,7 +191,8 @@
 		"description": "Angular 1.x Service $$api.get return a promise\n",
 		"body": [
 			"function ${getResource}(${config}) {",
-			"\treturn \\$\\$api.get(${url}, ${config});",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.get(url, ${config});",
 			"}",
 			""
 		]
@@ -201,7 +202,32 @@
 		"description": "Angular 1.x Service $$api.post return a promise\n",
 		"body": [
 			"function ${postResource}(${data}, ${config}) {",
-			"\treturn \\$\\$api.post(${url}, ${data}, ${config});",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.post(url, ${data}, ${config});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.post promise(application/json)": {
+		"prefix": "apiPostJSON",
+		"description": "Angular 1.x Service $$api.post return a promise\n",
+		"body": [
+			"function ${postResource}(${data}) {",
+			"\tvar ${headers} = \\$\\$api.CONTENT_TYPE_JSON;",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.post(url, ${data}, {headers: ${headers}});",
+			"}",
+			""
+		]
+	},
+	"Angular Service return a $$api.post promise(multipart/form-data)": {
+		"prefix": "apiPostFormData",
+		"description": "Angular 1.x Service $$api.post return a promise\n",
+		"body": [
+			"function ${postResource}(${data}) {",
+			"\tvar ${headers} = \\$\\$api.CONTENT_TYPE_MULTIPART_FORM_DATA;",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.post(url, ${data}, {headers: ${headers}, transformRequest: angular.identity});",
 			"}",
 			""
 		]
@@ -221,7 +247,8 @@
 		"description": "Angular 1.x Service $$api.patch return a promise\n",
 		"body": [
 			"function ${patchResource}(${data}, ${config}) {",
-			"\treturn \\$\\$api.patch(${url}, ${data}, ${config});",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.patch(url, ${data}, ${config});",
 			"}",
 			""
 		]
@@ -231,7 +258,8 @@
 		"description": "Angular 1.x Service $$api.delete return a promise\n",
 		"body": [
 			"function ${deleteResource}(${config}) {",
-			"\treturn \\$\\$api.delete(${url}, ${config});",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.delete(url, ${config});",
 			"}",
 			""
 		]
@@ -241,7 +269,8 @@
 		"description": "Angular 1.x Service $$api.head return a promise\n",
 		"body": [
 			"function ${headResource}(${config}) {",
-			"\treturn \\$\\$api.head(${url}, ${config});",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.head(url, ${config});",
 			"}",
 			""
 		]
@@ -251,7 +280,8 @@
 		"description": "Angular 1.x Service $$api.jsonp return a promise\n",
 		"body": [
 			"function ${jsonpResource}(${config}) {",
-			"\treturn \\$\\$api.jsonp(${url}, ${config});",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.jsonp(url, ${config});",
 			"}",
 			""
 		]
@@ -331,13 +361,32 @@
 			"\t\t\treturn deferred.promise;",
 			"\t\t}",
 			"",
-			"\t\tfunction httpRequest(config) {",
-			"\t\t\tif (",
-			"\t\t\t\tconfig.method.toLowerCase() === 'get' &&",
-			"\t\t\t\ttypeof config.data === 'object'",
-			"\t\t\t) {",
-			"\t\t\t\tconfig.url += queryString(config.data);",
+			"\t\tfunction handleJson (config, data) {",
+			"\t\t\tif (!config || !config.headers) {",
+			"\t\t\t\treturn false;",
 			"\t\t\t}",
+			"",
+			"\t\t\tvar headers = config.headers;",
+			"",
+			"\t\t\tif (headers['Content-Type'] && headers['Content-Type'].includes('json')) {",
+			"\t\t\t\treturn JSON.stringify(data);",
+			"\t\t\t}",
+			"",
+			"\t\t\treturn false;",
+			"\t\t}",
+			"",
+			"\t\tfunction httpRequest(config) {",
+			"\t\t\tvar method = config.method.toLowerCase();",
+			"\t\t\tvar requestData = null;",
+			"\t\t\tif (method === 'get' && typeof config.data === 'object') {",
+			"\t\t\t\tconfig.url += queryString(config.data);",
+			"\t\t\t} else if (method === 'post' || method === 'put') {",
+			"\t\t\t\trequestData = handleJson(config, config.data);",
+			"\t\t\t\tif (requestData) {",
+			"\t\t\t\t\tconfig.data = requestData;",
+			"\t\t\t\t}",
+			"\t\t\t}",
+			"",
 			"\t\t\tvar \\$\\$method = \\$http(config);",
 			"",
 			"\t\t\treturn _request(\\$\\$method);",
@@ -354,28 +403,31 @@
 			"\t\t}",
 			"",
 			"\t\tfunction postRequest(url, data, config) {",
+			"\t\t\tvar requestData = handleJson(config, data) || data;",
 			"\t\t\tvar \\$\\$method =",
 			"\t\t\t\ttypeof config !== 'undefined'",
-			"\t\t\t\t\t? \\$http.post(url, data, config)",
-			"\t\t\t\t\t: \\$http.post(url, data);",
+			"\t\t\t\t\t? \\$http.post(url, requestData, config)",
+			"\t\t\t\t\t: \\$http.post(url, requestData);",
 			"",
 			"\t\t\treturn _request(\\$\\$method);",
 			"\t\t}",
 			"",
 			"\t\tfunction putRequest(url, data, config) {",
+			"\t\t\tvar requestData = handleJson(config, data) || data;",
 			"\t\t\tvar \\$\\$method =",
 			"\t\t\t\ttypeof config !== 'undefined'",
-			"\t\t\t\t\t? \\$http.put(url, data, config)",
-			"\t\t\t\t\t: \\$http.put(url, data);",
+			"\t\t\t\t\t? \\$http.put(url, requestData, config)",
+			"\t\t\t\t\t: \\$http.put(url, requestData);",
 			"",
 			"\t\t\treturn _request(\\$\\$method);",
 			"\t\t}",
 			"",
 			"\t\tfunction patchRequest(url, data, config) {",
+			"\t\t\tvar requestData = handleJson(config, data) || data;",
 			"\t\t\tvar \\$\\$method =",
 			"\t\t\t\ttypeof config !== 'undefined'",
-			"\t\t\t\t\t? \\$http.patch(url, data, config)",
-			"\t\t\t\t\t: \\$http.patch(url, data);",
+			"\t\t\t\t\t? \\$http.patch(url, requestData, config)",
+			"\t\t\t\t\t: \\$http.patch(url, requestData);",
 			"",
 			"\t\t\treturn _request(\\$\\$method);",
 			"\t\t}",
