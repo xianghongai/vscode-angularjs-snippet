@@ -387,6 +387,7 @@
 			"\t\tfunction httpRequest(config) {",
 			"\t\t\tvar method = config.method.toLowerCase();",
 			"\t\t\tvar requestData = null;",
+			"",
 			"\t\t\tif (method === 'get' && typeof config.data === 'object') {",
 			"\t\t\t\tconfig.url += queryString(config.data);",
 			"\t\t\t} else if (method === 'post' || method === 'put') {",

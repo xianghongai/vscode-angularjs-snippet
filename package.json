@@ -4,19 +4,19 @@
 	"displayName": "AngularJS Snippet",
 	"description": "Code snippets for AngularJS",
 	"icon": "art/icon.png",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"galleryBanner": {
 		"color": "#fff",
 		"theme": "dark"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/loloolooo/vscode-angularjs-snippet/issues"
+		"url": "https://github.com/xianghongai/vscode-angularjs-snippet/issues"
 	},
-	"homepage": "https://github.com/loloolooo/vscode-angularjs-snippet/",
+	"homepage": "https://github.com/xianghongai/vscode-angularjs-snippet/",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/loloolooo/vscode-angularjs-snippet/blob/master/README.md"
+		"url": "https://github.com/xianghongai/vscode-angularjs-snippet/blob/master/README.md"
 	},
 	"engines": {
 		"vscode": "^0.12.x"
