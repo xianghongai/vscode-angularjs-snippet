@@ -271,9 +271,20 @@ var stateName = {
 ```
 
 ```javascript
+// $q
+
+// ngq  ↵
+// ngq.es6  ↵
+// ngqAll  ↵
+// ngqRace  ↵
+```
+
+```javascript
 // ngAjax
 
 // $$api  ↵ A complete AJAX package
+
+// api  ↵
 
 // apiRequest  ↵
 // apiPost  ↵
@@ -285,12 +296,11 @@ var stateName = {
 
 // apiGet  ↵
 function getResource(config) {
+  var url = '';
   return $$api.get(url, config);
 }
 
-// ngq  ↵
-// ngqAll  ↵
-// ngqRace  ↵
+// $http
 
 // ngHTTP  ↵
 // ngHTTPPost  ↵
