@@ -1,26 +1,26 @@
 {
 	"$attr.$normalize()": {
 		"prefix": "ngAttr.$normalize()",
-		"body": "$attrs.\\$normalize(${2:name});"
+		"body": "\\$attrs.\\$normalize(${2:name});"
 	},
 	"$attr.$addClass()": {
 		"prefix": "ngAttr.$addClass()",
-		"body": "$attrs.\\$addClass(${2:classVal});"
+		"body": "\\$attrs.\\$addClass(${2:classVal});"
 	},
 	"$attr.$removeClass()": {
 		"prefix": "ngAttr.$removeClass()",
-		"body": "$attrs.\\$removeClass(${2:classVal});"
+		"body": "\\$attrs.\\$removeClass(${2:classVal});"
 	},
 	"$attr.$updateClass()": {
 		"prefix": "ngAttr.$updateClass()",
-		"body": "$attrs.\\$updateClass(${2:newClasses}, ${3:oldClasses});"
+		"body": "\\$attrs.\\$updateClass(${2:newClasses}, ${3:oldClasses});"
 	},
 	"$attr.$observe()": {
 		"prefix": "ngAttr.$observe()",
-		"body": "$attrs.\\$observe(${2:key}, ${3:fn});"
+		"body": "\\$attrs.\\$observe(${2:key}, ${3:fn});"
 	},
 	"$attr.$set()": {
 		"prefix": "ngAttr.$set()",
-		"body": "$attrs.\\$set(${2:name}, ${3:value}); "
+		"body": "\\$attrs.\\$set(${2:name}, ${3:value}); "
 	}
 }
