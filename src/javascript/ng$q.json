@@ -51,7 +51,7 @@
       "});"
     ]
   },
-  "Angular $q.all": {
+  "Angular $q.all()": {
     "prefix": "ngqAll",
     "description": "Angular 1.x $q.all\n",
     "body": [
@@ -61,7 +61,7 @@
       ""
     ]
   },
-  "Angular $q.race": {
+  "Angular $q.race()": {
     "prefix": "ngqRace",
     "description": "Angular 1.x $q.race\n",
     "body": [
@@ -70,5 +70,12 @@
       "});",
       ""
     ]
+  },
+  "Angular $q.reject()": {
+    "prefix": "ngqReject",
+    "body": [
+      "return \\$q.reject(reason);"
+    ],
+    "description": "Creates a promise that is resolved as rejected with the specified reason.\n"
   }
 }
