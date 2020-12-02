@@ -1,7 +1,7 @@
 {
 	"name": "vscode-angularjs-snippet",
 	"publisher": "NicholasHsiang",
-	"displayName": "AngularJS Snippet",
+	"displayName": "AngularJS Code Snippets",
 	"description": "Code snippets for AngularJS",
 	"icon": "art/icon.png",
 	"version": "0.0.14",
@@ -27,29 +27,30 @@
 	"keywords": [
 		"AngularJS",
 		"Snippet",
-		"AngularJS Snippet"
+		"AngularJS Snippets",
+		"AngularJS Code Snippets"
 	],
 	"contributes": {
 		"snippets": [
 			{
 				"language": "javascript",
-				"path": "./dist/javascript.json"
+				"path": "./snippets/javascript.json"
 			},
 			{
 				"language": "html",
-				"path": "./dist/html.json"
+				"path": "./snippets/html.json"
 			},
 			{
 				"language": "css",
-				"path": "./dist/css.json"
+				"path": "./snippets/css.json"
 			},
 			{
 				"language": "scss",
-				"path": "./dist/css.json"
+				"path": "./snippets/css.json"
 			},
 			{
 				"language": "less",
-				"path": "./dist/css.json"
+				"path": "./snippets/css.json"
 			}
 		]
 	},
