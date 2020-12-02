@@ -30,12 +30,13 @@ Note: All the snippets include the final semicolon `;`
          / ngProvider                           // Angular provider
      ngr / ngRun                                // Angular Run
 */
+```
 
+```javascript
 // Simple: ngc ↵
 .controller('nameCtrl', ['$scope', 'nameService', function ($scope, nameService) {
 
 }])
-
 
 // IIFE: ngController  ↵
 (function () {
@@ -78,7 +79,10 @@ ngForm.
     .$setUntouched()
     .$setSubmitted()
     .$setValidity()
+```
 
+
+```javascript
 // ------------------------ ngModel
 
 ngModel
@@ -113,7 +117,9 @@ ngModel
     .$overrideModelOptions()
     .$processModelValue()
     .$setValidity()
+```
 
+```javascript
 // ------------------------ ngScope
 
 ngScope
@@ -139,49 +145,51 @@ ngScope
     .$emit()
     .$broadcast()
 
-    // ngsp / ngScope.property
-    $scope.key = value;
-    // ngsm / ngScope.method
-    $ctrl.fn = function () { };
+// ngsp / ngScope.property
+$scope.key = value;
+// ngsm / ngScope.method
+$ctrl.fn = function () { };
 
-    // ngcp / ngCtrl.property
-    $ctrl.key = value;
-    // ngcm / ngCtrl.method
-    $ctrl.fn = function () { };
+// ngcp / ngCtrl.property
+$ctrl.key = value;
+// ngcm / ngCtrl.method
+$ctrl.fn = function () { };
 
-    // ngrootScope/ngrScope
-    $rootScope.key = value;
+// ngrootScope/ngrScope
+$rootScope.key = value;
 
-    // ngEmit
-    $scope.onEmitEvent = function () {
-      $scope.$emit('EMIT_EVENT_NAME', params);
-    };
+// ngEmit
+$scope.onEmitEvent = function () {
+  $scope.$emit('EMIT_EVENT_NAME', params);
+};
 
-    // ngBroadcast
-    $scope.onBroadcastEvent = function () {
-      $scope.$broadcast('BROADCAST_EVENT_NAME', params);
-    };
+// ngBroadcast
+$scope.onBroadcastEvent = function () {
+  $scope.$broadcast('BROADCAST_EVENT_NAME', params);
+};
 
-    // ngOn
-    var clearListener = $scope.$on('EVENT_NAME', function (event, params) {
+// ngOn
+var clearListener = $scope.$on('EVENT_NAME', function (event, params) {
 
-    });
+});
 
-    // ngWatch
-    var clearWatch = $scope.$watch('watchExpression', function(newValue, oldValue) {
+// ngWatch
+var clearWatch = $scope.$watch('watchExpression', function(newValue, oldValue) {
 
-    });
+});
 
-    // ngWatchGroup
-    var clearWatch = $scope.$watchGroup(['watchExpressions'], function(newValue, oldValue) {
+// ngWatchGroup
+var clearWatch = $scope.$watchGroup(['watchExpressions'], function(newValue, oldValue) {
 
-    });
+});
 
-    // ngWatchCollection
-    var clearWatch = $scope.$watchCollection('watchExpression', function(newCollection, oldCollection) {
+// ngWatchCollection
+var clearWatch = $scope.$watchCollection('watchExpression', function(newCollection, oldCollection) {
 
-    });
+});
+```
 
+```javascript
 // ------------------------ ngAttr
 ngAttr
   .$normalize()
@@ -190,7 +198,9 @@ ngAttr
   .$updateClass()
   .$observe()
   .$set()
+```
 
+```javascript
 // ------------------------ ngSce (Strict Contextual Escaping)
 ngSce.
   .isEnabled()
@@ -215,7 +225,7 @@ ngSce.
 ```
 
 ```javascript
-// uiRouter
+// ------------------------ uiRouter
 ngState
   .get()
   .includes()

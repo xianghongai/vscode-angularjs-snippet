@@ -2,48 +2,56 @@
 const fs = require("fs");
 const glob = require("glob");
 
-// JavaScript
 const output = {};
-const outputPath = "./dist/";
+const outputPath = "./snippets/";
 
-const type = [
-	{ name: "javascript", path: "src/javascript/*.json" },
-	{ name: "html", path: "src/html/*.json" },
-	{ name: "css", path: "src/css/*.json" }
+const options = [
+	{
+		path: "src/javascript/*.json",
+		filename: "javascript",
+	},
+	{
+		path: "src/css/*.json",
+		filename: "css",
+	},
+	{
+		path: "src/html/*.json",
+		filename: "html",
+	},
 ];
 
-type.forEach(item => {
-	package(item);
-});
+function handler(error, files, filename) {
+	try {
+		fs.existsSync(outputPath) || fs.mkdirSync(outputPath);
 
-function package({ name, path }) {
-	var output = {};
+		fs.accessSync(outputPath, fs.constants.R_OK | fs.constants.W_OK);
 
-	glob(path, (error, files) => {
-		try {
-			fs.existsSync(outputPath) || fs.mkdirSync(outputPath);
+		files.forEach((file) => {
+			console.log("filename: %o", file);
+			const contents = JSON.parse(fs.readFileSync(file, "utf8"));
+			Object.assign(output, contents);
+		});
 
-			fs.accessSync(outputPath, fs.constants.R_OK | fs.constants.W_OK);
+		fs.writeFileSync(`${outputPath}${filename}.json`, JSON.stringify(output));
 
-			// console.log(`${outputPath} exists, and it is writable`);
+		console.log(`Complete! :)`);
+	} catch (err) {
+		console.log(err);
+		console.error(
+			`${outputPath} ${
+				err.code === "ENOENT" ? "does not exist" : "is read-only"
+			}`
+		);
+		console.log("Failed! :(");
+	}
+}
 
-			files.forEach(filename => {
-				const contents = JSON.parse(fs.readFileSync(filename, "utf8"));
-				Object.assign(output, contents);
-			});
-
-			fs.writeFileSync(outputPath + name + ".json", JSON.stringify(output));
-
-			console.log(`${name} Complete! :)`);
-		} catch (err) {
-			console.error(
-				`${outputPath} ${
-					err.code === "ENOENT" ? "does not exist" : "is read-only"
-				}`
-			);
-			console.log("Failed! :(");
-		}
+function init(options) {
+	options.forEach(({ path, filename }) => {
+		glob(path, (error, files) => {
+			handler(error, files, filename);
+		});
 	});
 }
 
-// HTML
+init(options);
