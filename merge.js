@@ -2,7 +2,6 @@
 const fs = require("fs");
 const glob = require("glob");
 
-const output = {};
 const outputPath = "./snippets/";
 
 const options = [
@@ -22,6 +21,8 @@ const options = [
 
 function handler(error, files, filename) {
 	try {
+		let output = {};
+
 		fs.existsSync(outputPath) || fs.mkdirSync(outputPath);
 
 		fs.accessSync(outputPath, fs.constants.R_OK | fs.constants.W_OK);
@@ -32,7 +33,7 @@ function handler(error, files, filename) {
 			Object.assign(output, contents);
 		});
 
-		fs.writeFileSync(`${outputPath}${filename}.json`, JSON.stringify(output));
+		fs.writeFileSync(`${outputPath}${filename}.json`, JSON.stringify(output, null, 4));
 
 		console.log(`Complete! :)`);
 	} catch (err) {
