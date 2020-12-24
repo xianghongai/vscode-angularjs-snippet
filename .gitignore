@@ -1,6 +1,6 @@
-.vscode
 node_modules
-yarn.lock*
-package-lock.json*
-git-*.sh*
+package-lock.json
+yarn.lock
 *.vsix
+/git-*.sh*
+snippets/*
