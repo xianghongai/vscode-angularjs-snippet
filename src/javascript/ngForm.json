@@ -4,8 +4,8 @@
 		"body": [
 			"if (\\$${1:ctrl}.${2:formName}) {",
 			"\t\\$scope.${3:formData} = {};",
-			"\t\\$${1:ctrl}.${2:formName}.$setPristine();",
-			"\t\\$${1:ctrl}.${2:formName}.$setUntouched();",
+			"\t\\$${1:ctrl}.${2:formName}.\\$setPristine();",
+			"\t\\$${1:ctrl}.${2:formName}.\\$setUntouched();",
 			"\t$0",
 			"}"
 		],

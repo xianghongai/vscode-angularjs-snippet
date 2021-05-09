@@ -7,7 +7,7 @@
 	"Angular $scope method": {
 		"prefix": ["ngsm", "ngScope.method"],
 		"description": "Angular 1.x $scope method \n",
-		"body": ["\\$scope.${fn} = function () {", "\t$0", "};"]
+		"body": ["\\$scope.${1:fn} = function () {", "\t$0", "};"]
 	},
 	"$scope.$new()": {
 		"prefix": "ngScope.$new()",
@@ -98,8 +98,8 @@
 		"prefix": "ngEmit",
 		"description": "Angular 1.x $emit",
 		"body": [
-			"\\$scope.${onEmitEvent} = function () {",
-			"\t\\$scope.\\$emit('${EMIT_EVENT_NAME}', ${params});",
+			"\\$scope.${1:onEmitEvent} = function () {",
+			"\t\\$scope.\\$emit('${2:EMIT_EVENT_NAME}', ${3:params});",
 			"};"
 		]
 	},
@@ -107,8 +107,8 @@
 		"prefix": "ngBroadcast",
 		"description": "Angular 1.x $broadcast",
 		"body": [
-			"\\$scope.${onBroadcastEvent} = function () {",
-			"\t\\$scope.\\$broadcast('${BROADCAST_EVENT_NAME}', ${params});",
+			"\\$scope.${1:onBroadcastEvent} = function () {",
+			"\t\\$scope.\\$broadcast('${2:BROADCAST_EVENT_NAME}', ${3:params});",
 			"};"
 		]
 	},
@@ -116,7 +116,7 @@
 		"prefix": "ngOn",
 		"description": "Angular 1.x $on",
 		"body": [
-			"var clearListener = \\$scope.\\$on('${EVENT_NAME}', function (event, params) {",
+			"var clearListener = \\$scope.\\$on('${1:EVENT_NAME}', function (event, params) {",
 			"\tconsole.dir(event);",
 			"\tconsole.dir(params);$0",
 			"});"

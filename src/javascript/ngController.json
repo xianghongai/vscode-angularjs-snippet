@@ -2,12 +2,12 @@
 	"Angular $ctrl method": {
 		"prefix": ["ngcm", "ngCtrl.method"],
 		"description": "Angular 1.x $ctrl method \n",
-		"body": ["\\$ctrl.${fn} = function () {", "\t$0", "};"]
+		"body": ["\\$ctrl.${1:fn} = function () {", "\t$0", "};"]
 	},
 	"Angular $ctrl.property": {
 		"prefix": ["ngcp", "ngCtrl.property"],
 		"description": "Angular 1.x $ctrl\n",
-		"body": ["\\$ctrl.${1:key} = ${value};", "$0"]
+		"body": ["\\$ctrl.${1:key} = ${2:value};", "$0"]
 	},
 	"Angular Controller (Simple)": {
 		"prefix": "ngc",

@@ -1,7 +1,7 @@
 {
 	"Angular translate": {
 		"prefix": ["ngtranslate", "ngi18n"],
-		"body": ["{{'${I18N}' | translate}}"],
+		"body": ["{{'${1:I18N}' | translate}}"],
 		"description": "Angular 1.x Translation by a filter(angular-translate)\n<ANY translate>AS_TEXT</ANY>\n <ANY translate=\"AS_ATTRIBUTE\"></ANY>\n <ANY translate>{{ 'AS_INTERPOLATION' }}</ANY>\n <ANY translate=\"{{ 'AS_INTERPOLATION' }}\"></ANY>\n"
 	}
 }

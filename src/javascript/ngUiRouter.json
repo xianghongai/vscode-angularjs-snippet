@@ -53,30 +53,30 @@
 	},
 	"$state.get()": {
 		"prefix": "ngState.get()",
-		"body": "\\$state.get(${stateOrName}, ${context});"
+		"body": "\\$state.get(${1:stateOrName}, ${2:context});"
 	},
 	"$state.includes()": {
 		"prefix": "ngState.includes()",
-		"body": "\\$state.includes(${stateOrName}, ${params}, ${options});"
+		"body": "\\$state.includes(${1:stateOrName}, ${2:params}, ${3:options});"
 	},
 	"$state.is()": {
 		"prefix": "ngState.is()",
-		"body": "\\$state.is(${stateOrName}, ${params}, ${options});"
+		"body": "\\$state.is(${1:stateOrName}, ${2:params}, ${3:options});"
 	},
 	"$state.reload()": {
 		"prefix": "ngState.reload()",
-		"body": "\\$state.reload(${state});"
+		"body": "\\$state.reload(${1:state});"
 	},
 	"$state.transitionTo()": {
 		"prefix": "ngState.transitionTo()",
-		"body": "\\$state.transitionTo(${to}, ${toParams}, ${options});"
+		"body": "\\$state.transitionTo(${1:to}, ${2:toParams}, ${3:options});"
 	},
 	"$urlRouterProvider.otherwise()": {
 		"prefix": "ngState.otherwise()",
-		"body": "\\$urlRouterProvider.otherwise('/${index}');"
+		"body": "\\$urlRouterProvider.otherwise('/${1:index}');"
 	},
 	"$urlRouterProvider.when()": {
 		"prefix": "ngState.when()",
-		"body": "\\$urlRouterProvider.when(${what}, ${handler});"
+		"body": "\\$urlRouterProvider.when(${1:what}, ${2:handler});"
 	}
 }

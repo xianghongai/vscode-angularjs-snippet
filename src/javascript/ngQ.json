@@ -1,0 +1,81 @@
+{
+  "Angular $q (CommonJS-style)": {
+    "prefix": "ngq",
+    "description": "Angular 1.x $q (CommonJS-style)\n",
+    "body": [
+      "// Define",
+      "function ${1:asyncFn}(param) {",
+      "\tvar deferred = \\$q.defer();",
+      "",
+      "\tdeferred.notify();",
+      "$0",
+      "\tif (param) {",
+      "\t\tdeferred.resolve();",
+      "\t} else {",
+      "\t\tdeferred.reject();",
+      "\t}",
+      "\t",
+      "\treturn deferred.promise;",
+      "}",
+      "",
+      "// Reference",
+      "${1:asyncFn}(param).then(function (result) {",
+      "\t",
+      "} function (reason) {",
+      "\t",
+      "} function (value) {",
+      "\t",
+      "});"
+    ]
+  },
+  "Angular $q (ES6-style)": {
+    "prefix": "ngq.es6",
+    "description": "Angular 1.x $q (ES6-style)\n",
+    "body": [
+      "// Define",
+      "function ${1:asyncFn}(param) {",
+      "\treturn \\$q(function (resolve, reject) {",
+      "\t\tif (param) {",
+      "\t\t\tresolve();",
+      "\t\t} else {",
+      "\t\t\treject();",
+      "\t\t}",
+      "\t});",
+      "}",
+      "$0",
+      "// Reference",
+      "${1:asyncFn}(param).then(function(result) {",
+      "\t",
+      "}, function(reason) {",
+      "\t",
+      "});"
+    ]
+  },
+  "Angular $q.all()": {
+    "prefix": "ngqAll",
+    "description": "Angular 1.x $q.all\n",
+    "body": [
+      "\\$q.all([${1:promiseOne}, ${2:promiseTwo}]).then(function (response) {",
+      "\t$0",
+      "});",
+      ""
+    ]
+  },
+  "Angular $q.race()": {
+    "prefix": "ngqRace",
+    "description": "Angular 1.x $q.race\n",
+    "body": [
+      "\\$q.race([${1:promiseOne}, ${2:promiseTwo}]).then(function (response) {",
+      "\t$0",
+      "});",
+      ""
+    ]
+  },
+  "Angular $q.reject()": {
+    "prefix": "ngqReject",
+    "body": [
+      "return \\$q.reject(reason);"
+    ],
+    "description": "Creates a promise that is resolved as rejected with the specified reason.\n"
+  }
+}

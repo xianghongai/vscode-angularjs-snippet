@@ -5,10 +5,10 @@
 		"body": [
 			"var deferred = \\$q.defer();",
 			"\\$http({",
-			"\turl: '${url}',",
-			"\tmethod: '${METHOD}'",
+			"\turl: '${1:url}',",
+			"\tmethod: '${2:METHOD}'",
 			"}).then(function (response) {",
-			"\t${0}",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -22,8 +22,8 @@
 		"description": "Angular 1.x $http.get\n",
 		"body": [
 			"var deferred = \\$q.defer();",
-			"\\$http.get('${url}', ${config}).then(function (response){",
-			"\t${0}",
+			"\\$http.get('${1:url}', ${2:config}).then(function (response){",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -37,8 +37,8 @@
 		"description": "Angular 1.x $http.post\n",
 		"body": [
 			"var deferred = \\$q.defer();",
-			"\\$http.post('${url}', data, config).then(function (response){",
-			"\t${0}",
+			"\\$http.post('${1:url}', data, config).then(function (response){",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -52,8 +52,8 @@
 		"description": "Angular 1.x $http.put\n",
 		"body": [
 			"var deferred = \\$q.defer();",
-			"\\$http.put('${url}', ${config}).then(function (response){",
-			"\t${0}",
+			"\\$http.put('${1:url}', ${2:config}).then(function (response){",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -67,8 +67,8 @@
 		"description": "Angular 1.x $http.patch\n",
 		"body": [
 			"var deferred = \\$q.defer();",
-			"\\$http.patch('${url}', ${config}).then(function (response){",
-			"\t${0}",
+			"\\$http.patch('${1:url}', ${2:config}).then(function (response){",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -82,8 +82,8 @@
 		"description": "Angular 1.x $http.delete\n",
 		"body": [
 			"var deferred = \\$q.defer();",
-			"\\$http.delete('${url}', ${config}).then(function (response){",
-			"\t${0}",
+			"\\$http.delete('${1:url}', ${2:config}).then(function (response){",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -97,8 +97,8 @@
 		"description": "Angular 1.x $http.head\n",
 		"body": [
 			"var deferred = \\$q.defer();",
-			"\\$http.head('${url}', ${config}).then(function (response){",
-			"\t${0}",
+			"\\$http.head('${1:url}', ${2:config}).then(function (response){",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -112,8 +112,8 @@
 		"description": "Angular 1.x $http.jsonp\n",
 		"body": [
 			"var deferred = \\$q.defer();",
-			"\\$http.jsonp('${url}', ${config}).then(function (response){",
-			"\t${0}",
+			"\\$http.jsonp('${1:url}', ${2:config}).then(function (response){",
+			"\t$0",
 			"\tdeferred.resolve(response);",
 			"}, function (error) {",
 			"\tdeferred.reject(error);",
@@ -126,11 +126,11 @@
 		"prefix": "apiRequest",
 		"description": "Angular 1.x Service $$api.request return a promise\n",
 		"body": [
-			"function ${requestResource}(${config}) {",
+			"function ${1:requestResource}(${2:config}) {",
 			"\treturn \\$\\$api.request({",
-			"\tmethod: '${GET}',",
-			"\turl: '${url}',",
-			"\tparams: ${config}",
+			"\tmethod: '${3:GET}',",
+			"\turl: '${4:url}',",
+			"\tparams: $2",
 			"});"
 		]
 	},
@@ -138,9 +138,9 @@
 		"prefix": "apiGet",
 		"description": "Angular 1.x Service $$api.get return a promise\n",
 		"body": [
-			"function ${getResource}(${config}) {",
+			"function ${1:getResource}(${2:config}) {",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.get(url, ${config});",
+			"\treturn \\$\\$api.get(url, $2);",
 			"}",
 			""
 		]
@@ -149,9 +149,9 @@
 		"prefix": "apiPost",
 		"description": "Angular 1.x Service $$api.post return a promise\n",
 		"body": [
-			"function ${postResource}(${data}, ${config}) {",
+			"function ${1:postResource}(${2:data}, ${3:config}) {",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.post(url, ${data}, ${config});",
+			"\treturn \\$\\$api.post(url, $2, $3);",
 			"}",
 			""
 		]
@@ -160,10 +160,10 @@
 		"prefix": "apiPostJSON",
 		"description": "Angular 1.x Service $$api.post return a promise\n",
 		"body": [
-			"function ${postResource}(${data}) {",
-			"\tvar ${headers} = \\$\\$api.CONTENT_TYPE_JSON;",
+			"function ${1:postResource}(${2:data}) {",
+			"\tvar ${3:headers} = \\$\\$api.CONTENT_TYPE_JSON;",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.post(url, ${data}, {headers: ${headers}});",
+			"\treturn \\$\\$api.post(url, $2, {headers: $3});",
 			"}",
 			""
 		]
@@ -172,10 +172,10 @@
 		"prefix": "apiPostFormData",
 		"description": "Angular 1.x Service $$api.post return a promise\n",
 		"body": [
-			"function ${postResource}(${data}) {",
-			"\tvar ${headers} = \\$\\$api.CONTENT_TYPE_MULTIPART_FORM_DATA;",
+			"function ${1:postResource}(${2:data}) {",
+			"\tvar ${3:headers} = \\$\\$api.CONTENT_TYPE_MULTIPART_FORM_DATA;",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.post(url, ${data}, {headers: ${headers}, transformRequest: angular.identity});",
+			"\treturn \\$\\$api.post(url, $2, {headers: $3, transformRequest: angular.identity});",
 			"}",
 			""
 		]
@@ -184,8 +184,9 @@
 		"prefix": "apiPut",
 		"description": "Angular 1.x Service $$api.put return a promise\n",
 		"body": [
-			"function ${putResource}(${data}, ${config}) {",
-			"\treturn \\$\\$api.put(${url}, ${data}, ${config});",
+			"function ${1:putResource}(${2:data}, ${3:config}) {",
+			"\tvar url = '$0';",
+			"\treturn \\$\\$api.put(url, $2, $3);",
 			"}",
 			""
 		]
@@ -194,9 +195,9 @@
 		"prefix": "apiPatch",
 		"description": "Angular 1.x Service $$api.patch return a promise\n",
 		"body": [
-			"function ${patchResource}(${data}, ${config}) {",
+			"function ${1:patchResource}(${2:data}, ${3:config}) {",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.patch(url, ${data}, ${config});",
+			"\treturn \\$\\$api.patch(url, $2, $3);",
 			"}",
 			""
 		]
@@ -205,9 +206,9 @@
 		"prefix": "apiDelete",
 		"description": "Angular 1.x Service $$api.delete return a promise\n",
 		"body": [
-			"function ${deleteResource}(${config}) {",
+			"function ${1:deleteResource}(${2:config}) {",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.delete(url, ${config});",
+			"\treturn \\$\\$api.delete(url, $2);",
 			"}",
 			""
 		]
@@ -216,9 +217,9 @@
 		"prefix": "apiHead",
 		"description": "Angular 1.x Service $$api.head return a promise\n",
 		"body": [
-			"function ${headResource}(${config}) {",
+			"function ${1:headResource}(${2:config}) {",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.head(url, ${config});",
+			"\treturn \\$\\$api.head(url, $2);",
 			"}",
 			""
 		]
@@ -227,9 +228,9 @@
 		"prefix": "apiJSONP",
 		"description": "Angular 1.x Service $$api.jsonp return a promise\n",
 		"body": [
-			"function ${jsonpResource}(${config}) {",
+			"function ${1:jsonpResource}(${2:config}) {",
 			"\tvar url = '$0';",
-			"\treturn \\$\\$api.jsonp(url, ${config});",
+			"\treturn \\$\\$api.jsonp(url, $2);",
 			"}",
 			""
 		]
@@ -241,7 +242,7 @@
 		],
 		"description": "Angular 1.x Controller calls service promise\n",
 		"body": [
-			"${1:${TM_FILENAME_BASE/^(.)([a-zA-Z0-9]*)([_\\W])(.*)/${1:/downcase}${2}${4:/pascalcase}/}}Service",
+			"${1:${TM_FILENAME_BASE/^(.)([a-zA-Z0-9]*)([_\\W])(.*)/${1:/downcase}$2${4:/pascalcase}/}}Service",
 			"\t.${2:method}Resource(${3:requestParam})",
 			"\t.then(function (response) {",
 			"\t\tif (response.data.code == '200') {",
