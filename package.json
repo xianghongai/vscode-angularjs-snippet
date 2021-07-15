@@ -4,7 +4,7 @@
 	"displayName": "AngularJS Code Snippets",
 	"description": "Code snippets for AngularJS",
 	"icon": "art/icon.png",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"galleryBanner": {
 		"color": "#fff",
 		"theme": "dark"
