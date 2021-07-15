@@ -3,7 +3,7 @@
 		"prefix": ["uisref", "ngsref"],
 		"description": "Angular 1.x UI-Router ui-sref\n",
 		"body": [
-			"ui-sref=\"${1:${2:statename}({${3:param}: ${4:value}})}\" ${5:ui-sref-active=\"${6:cls}_active\"}"
+			"ui-sref=\"${1:${2:statename}({${3:param}: ${4:value}}})\" ${5:ui-sref-active=\"${6:cls}_active\"}"
 		]
 	},
 	"uiSrefActiveBy": {
