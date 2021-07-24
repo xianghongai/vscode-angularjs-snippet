@@ -2,7 +2,7 @@
   <h1 align="center">AngularJS Snippet (Visual Studio Code)</h1>
 </p>
 
-[中文](./README_CN.md)。
+用于 AngularJS 的代码片断。
 
 <p align="center">
   <a href="https://github.com/xianghongai/vscode-angularjs-snippet">
@@ -30,11 +30,11 @@ or, Command: `ext install nicholashsiang.vscode-angularjs-snippet`
 
 ## Snippets
 
-**This extension covers almost all the features of AngularJS. It is recommended to look at the source code to know what prefix is and its naming rules. The whole design idea is: no need to memorize deliberately, if you understand the concept of the framework, you can fully understand the function of this extension.**
+**本扩展几乎涵盖了 AngularJS 所有特性，建议看源码，大概知道 prefix 有哪些，及其命名规则。整个设计思路是：不用刻意的背诵，理解了框架的各个概念，也就完全知道了这个扩展的功能。**
 
 ### JavaScript
 
-Note: All the snippets include the final semicolon `;`
+注意：所有代码片段都包括最后的 `;` 分号。
 
 ```javascript
 // Basic
