@@ -4,7 +4,7 @@
 	"displayName": "AngularJS Code Snippets",
 	"description": "Code snippets for AngularJS",
 	"icon": "art/icon.png",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"galleryBanner": {
 		"color": "#fff",
 		"theme": "dark"
@@ -55,7 +55,10 @@
 		]
 	},
 	"scripts": {
-		"build": "node merge.js && vsce package"
+		"prebuild": "node merge.js",
+		"build": "vsce package",
+		"prepublish": "npm run build",
+		"publish": "vsce publish"
 	},
 	"devDependencies": {
 		"glob": "^7.1.4"
