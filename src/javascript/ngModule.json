@@ -2,11 +2,11 @@
 	"Angular Module (Simple)": {
 		"prefix": "ngm",
 		"body": ["var ${1:myApp} = angular.module('${1:myApp}', [$2]);$0"],
-		"description": "Angular 1.x Module (Simple)\n"
+		"description": "Angular 1.x Module (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Module": {
 		"prefix": "ngModule",
-		"description": "Angular 1.x Module\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -30,6 +30,8 @@
 			"\t]);",
 			"",
 			"}());"
-		]
+		],
+		"description": "Angular 1.x Module\n",
+		"scope": "javascript"
 	}
 }

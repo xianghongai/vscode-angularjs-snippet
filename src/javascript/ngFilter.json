@@ -9,11 +9,11 @@
 			"})",
 			""
 		],
-		"description": "Angular 1.x Filter (Simple)\n"
+		"description": "Angular 1.x Filter (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Filter": {
 		"prefix": "ngFilter",
-		"description": "Angular 1.x Filter\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -33,6 +33,8 @@
 			"\t}",
 			"",
 			"}());"
-		]
+		],
+		"description": "Angular 1.x Filter\n",
+		"scope": "javascript"
 	}
 }

@@ -9,13 +9,13 @@
     <img src="https://img.shields.io/github/repo-size/xianghongai/vscode-angularjs-snippet?style=plastic&color=4ac51c">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-angularjs-snippet">
-    <img src="https://vsmarketplacebadge.apphb.com/version-short/nicholashsiang.vscode-angularjs-snippet.svg?style=plastic&color=c3002f">
+    <img src="https://vsmarketplacebadges.dev/version/nicholashsiang.vscode-angularjs-snippet.svg?style=plastic&color=c3002f">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-angularjs-snippet">
-    <img src="https://vsmarketplacebadge.apphb.com/installs-short/nicholashsiang.vscode-angularjs-snippet.svg?style=plastic&color=4ac51c">
+    <img src="https://vsmarketplacebadges.dev/downloads-short/nicholashsiang.vscode-angularjs-snippet.svg?style=plastic&color=4ac51c">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-angularjs-snippet">
-    <img src="https://vsmarketplacebadge.apphb.com/rating-short/nicholashsiang.vscode-angularjs-snippet.svg?style=plastic&color=4ac51c">
+    <img src="https://vsmarketplacebadges.dev/rating-short/nicholashsiang.vscode-angularjs-snippet.svg?style=plastic&color=4ac51c">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-angularjs-snippet">
     <img src="https://img.shields.io/github/license/xianghongai/vscode-angularjs-snippet?maxAge=2592000&style=plastic&color=4ac51c">
@@ -104,7 +104,6 @@ ngForm.
     .$setSubmitted()
     .$setValidity()
 ```
-
 
 ```javascript
 // ------------------------ ngModel

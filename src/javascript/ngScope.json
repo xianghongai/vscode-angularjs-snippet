@@ -1,57 +1,70 @@
 {
 	"Angular $scope.property": {
 		"prefix": ["ngsp", "ngScope.property"],
+		"body": ["\\$scope.${1:key} = ${2:value};"],
 		"description": "Angular 1.x $scope\n",
-		"body": ["\\$scope.${1:key} = ${2:value};"]
+		"scope": "javascript"
 	},
 	"Angular $scope method": {
 		"prefix": ["ngsm", "ngScope.method"],
+		"body": ["\\$scope.${1:fn} = function () {", "\t$0", "};"],
 		"description": "Angular 1.x $scope method \n",
-		"body": ["\\$scope.${1:fn} = function () {", "\t$0", "};"]
+		"scope": "javascript"
 	},
 	"$scope.$new()": {
 		"prefix": "ngScope.$new()",
-		"body": "\\$scope.\\$new(${1:isolate}, ${2:parent});"
+		"body": "\\$scope.\\$new(${1:isolate}, ${2:parent});",
+		"scope": "javascript"
 	},
 	"$scope.$watch()": {
 		"prefix": "ngScope.$watch()",
-		"body": "\\$scope.\\$watch(${1:watchExpression}, ${2:listener}, ${3:objectEquality});"
+		"body": "\\$scope.\\$watch(${1:watchExpression}, ${2:listener}, ${3:objectEquality});",
+		"scope": "javascript"
 	},
 	"$scope.$watchGroup()": {
 		"prefix": "ngScope.$watchGroup()",
-		"body": "\\$scope.\\$watchGroup(${1:watchExpressions}, ${2:listener});"
+		"body": "\\$scope.\\$watchGroup(${1:watchExpressions}, ${2:listener});",
+		"scope": "javascript"
 	},
 	"$scope.$watchCollection()": {
 		"prefix": "ngScope.$watchCollection()",
-		"body": "\\$scope.\\$watchCollection(${1:obj}, ${2:listener});"
+		"body": "\\$scope.\\$watchCollection(${1:obj}, ${2:listener});",
+		"scope": "javascript"
 	},
 	"$scope.$digest()": {
 		"prefix": "ngScope.$digest()",
-		"body": "\\$scope.\\$digest();"
+		"body": "\\$scope.\\$digest();",
+		"scope": "javascript"
 	},
 	"$scope.$suspend()": {
 		"prefix": "ngScope.$suspend()",
-		"body": "\\$scope.\\$suspend();"
+		"body": "\\$scope.\\$suspend();",
+		"scope": "javascript"
 	},
 	"$scope.$isSuspended()": {
 		"prefix": "ngScope.$isSuspended()",
-		"body": "\\$scope.\\$isSuspended();"
+		"body": "\\$scope.\\$isSuspended();",
+		"scope": "javascript"
 	},
 	"$scope.$resume()": {
 		"prefix": "ngScope.$resume()",
-		"body": "\\$scope.\\$resume();"
+		"body": "\\$scope.\\$resume();",
+		"scope": "javascript"
 	},
 	"$scope.$destroy()": {
 		"prefix": "ngScope.$destroy()",
-		"body": "\\$scope.\\$destroy();"
+		"body": "\\$scope.\\$destroy();",
+		"scope": "javascript"
 	},
 	"$scope.$eval()": {
 		"prefix": "ngScope.$eval()",
-		"body": "\\$scope.\\$eval(${1:expression}, ${2:locals});"
+		"body": "\\$scope.\\$eval(${1:expression}, ${2:locals});",
+		"scope": "javascript"
 	},
 	"$scope.$evalAsync()": {
 		"prefix": "ngScope.$evalAsync()",
-		"body": "\\$scope.\\$evalAsync(${1:expression}, ${2:locals});"
+		"body": "\\$scope.\\$evalAsync(${1:expression}, ${2:locals});",
+		"scope": "javascript"
 	},
 	"$scope.$apply()": {
 		"prefix": "ngScope.$apply()",
@@ -59,77 +72,90 @@
 			"// change any model outside of the Angular context,",
 			"// to inform Angular of the changes by calling \\$apply() manually",
 			"\\$scope.\\$apply(${1:fn});"
-		]
+		],
+		"scope": "javascript"
 	},
 	"$scope.$applyAsync()": {
 		"prefix": "ngScope.$applyAsync()",
-		"body": "\\$scope.\\$applyAsync(${1:exp});"
+		"body": "\\$scope.\\$applyAsync(${1:exp});",
+		"scope": "javascript"
 	},
 	"$scope.$on()": {
 		"prefix": "ngScope.$on()",
-		"body": "\\$scope.\\$on(${1:name}, ${2:listener});"
+		"body": "\\$scope.\\$on(${1:name}, ${2:listener});",
+		"scope": "javascript"
 	},
 	"$scope.$emit()": {
 		"prefix": "ngScope.$emit()",
-		"body": "\\$scope.\\$emit(${1:name}, ${2:args});"
+		"body": "\\$scope.\\$emit(${1:name}, ${2:args});",
+		"scope": "javascript"
 	},
 	"$scope.$broadcast()": {
 		"prefix": "ngScope.$broadcast()",
-		"body": "\\$scope.\\$broadcast(${1:name}, ${2:args}); "
+		"body": "\\$scope.\\$broadcast(${1:name}, ${2:args}); ",
+		"scope": "javascript"
 	},
 	"$scope.$id": {
 		"prefix": "ngScope.$id",
-		"body": "\\$scope.\\$id"
+		"body": "\\$scope.\\$id",
+		"scope": "javascript"
 	},
 	"$scope.$parent": {
 		"prefix": "ngScope.$parent",
-		"body": "\\$scope.\\$parent"
+		"body": "\\$scope.\\$parent",
+		"scope": "javascript"
 	},
 	"$scope.$root": {
 		"prefix": "ngScope.$root",
-		"body": "\\$scope.\\$root"
+		"body": "\\$scope.\\$root",
+		"scope": "javascript"
 	},
 	"Angular rootScope": {
 		"prefix": ["ngrootScope", "ngrScope"],
+		"body": ["\\$rootScope.${1:key} = ${2:value};"],
 		"description": "Angular 1.x $rootScope\n",
-		"body": ["\\$rootScope.${1:key} = ${2:value};"]
+		"scope": "javascript"
 	},
 	"Angular $emit": {
 		"prefix": "ngEmit",
-		"description": "Angular 1.x $emit",
 		"body": [
 			"\\$scope.${1:onEmitEvent} = function () {",
 			"\t\\$scope.\\$emit('${2:EMIT_EVENT_NAME}', ${3:params});",
 			"};"
-		]
+		],
+		"description": "Angular 1.x $emit",
+		"scope": "javascript"
 	},
 	"Angular $broadcast": {
 		"prefix": "ngBroadcast",
-		"description": "Angular 1.x $broadcast",
 		"body": [
 			"\\$scope.${1:onBroadcastEvent} = function () {",
 			"\t\\$scope.\\$broadcast('${2:BROADCAST_EVENT_NAME}', ${3:params});",
 			"};"
-		]
+		],
+		"description": "Angular 1.x $broadcast",
+		"scope": "javascript"
 	},
 	"Angular $on": {
 		"prefix": "ngOn",
-		"description": "Angular 1.x $on",
 		"body": [
 			"var clearListener = \\$scope.\\$on('${1:EVENT_NAME}', function (event, params) {",
 			"\tconsole.dir(event);",
 			"\tconsole.dir(params);$0",
 			"});"
-		]
+		],
+		"description": "Angular 1.x $on",
+		"scope": "javascript"
 	},
 	"Angular $safeApply": {
 		"prefix": "ngSafeApply",
-		"description": "Angular 1.x $safeApply",
 		"body": [
 			"function safeApply(\\$scope, fn) {",
 			"\t\\$scope.\\$\\$phase || \\$scope.\\$root.\\$\\$phase ? fn() : \\$scope.\\$apply(fn);",
 			"}"
-		]
+		],
+		"description": "Angular 1.x $safeApply",
+		"scope": "javascript"
 	},
 	"$scope.$watch": {
 		"prefix": "ngWatch",
@@ -138,7 +164,8 @@
 			"\t$0",
 			"});"
 		],
-		"description": "$scope.$watch"
+		"description": "$scope.$watch",
+		"scope": "javascript"
 	},
 	"$scope.$watchGroup": {
 		"prefix": "ngWatchGroup",
@@ -147,7 +174,8 @@
 			"\t$0",
 			"});"
 		],
-		"description": "$scope.$watchGroup"
+		"description": "$scope.$watchGroup",
+		"scope": "javascript"
 	},
 	"$scope.$watchCollection": {
 		"prefix": "ngWatchCollection",
@@ -156,6 +184,7 @@
 			"\t$0",
 			"});"
 		],
-		"description": "$scope.$watchCollection"
+		"description": "$scope.$watchCollection",
+		"scope": "javascript"
 	}
 }

@@ -6,11 +6,11 @@
 			"\t$0",
 			"}])"
 		],
-		"description": "Angular 1.x Config (Simple)\n"
+		"description": "Angular 1.x Config (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Config": {
 		"prefix": "ngConfig",
-		"description": "Angular 1.x Config\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -26,6 +26,8 @@
 			"\t}",
 			"",
 			"}());"
-		]
+		],
+		"description": "Angular 1.x Config\n",
+		"scope": "javascript"
 	}
 }

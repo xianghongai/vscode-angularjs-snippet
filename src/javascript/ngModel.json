@@ -1,118 +1,147 @@
 {
 	"ngModel.$render()": {
 		"prefix": "ngModel.method.$render",
-		"body": "\\${1:ngModel}.method.\\$render();"
+		"body": "\\${1:ngModel}.method.\\$render();",
+		"scope": "javascript"
 	},
 	"ngModel.$isEmpty()": {
 		"prefix": "ngModel.method.$isEmpty",
-		"body": "\\${1:ngModel}.method.\\$isEmpty(${2:value});"
+		"body": "\\${1:ngModel}.method.\\$isEmpty(${2:value});",
+		"scope": "javascript"
 	},
 	"ngModel.$setPristine()": {
 		"prefix": "ngModel.method.$setPristine",
-		"body": "\\${1:ngModel}.method.\\$setPristine();"
+		"body": "\\${1:ngModel}.method.\\$setPristine();",
+		"scope": "javascript"
 	},
 	"ngModel.$setDirty()": {
 		"prefix": "ngModel.method.$setDirty",
-		"body": "\\${1:ngModel}.method.\\$setDirty();"
+		"body": "\\${1:ngModel}.method.\\$setDirty();",
+		"scope": "javascript"
 	},
 	"ngModel.$setUntouched()": {
 		"prefix": "ngModel.method.$setUntouched",
-		"body": "\\${1:ngModel}.method.\\$setUntouched();"
+		"body": "\\${1:ngModel}.method.\\$setUntouched();",
+		"scope": "javascript"
 	},
 	"ngModel.$setTouched()": {
 		"prefix": "ngModel.method.$setTouched",
-		"body": "\\${1:ngModel}.method.\\$setTouched();"
+		"body": "\\${1:ngModel}.method.\\$setTouched();",
+		"scope": "javascript"
 	},
 	"ngModel.$rollbackViewValue()": {
 		"prefix": "ngModel.method.$rollbackViewValue",
-		"body": "\\${1:ngModel}.method.\\$rollbackViewValue();"
+		"body": "\\${1:ngModel}.method.\\$rollbackViewValue();",
+		"scope": "javascript"
 	},
 	"ngModel.$validate()": {
 		"prefix": "ngModel.method.$validate",
-		"body": "\\${1:ngModel}.method.\\$validate();"
+		"body": "\\${1:ngModel}.method.\\$validate();",
+		"scope": "javascript"
 	},
 	"ngModel.$commitViewValue()": {
 		"prefix": "ngModel.method.$commitViewValue",
-		"body": "\\${1:ngModel}.method.\\$commitViewValue();"
+		"body": "\\${1:ngModel}.method.\\$commitViewValue();",
+		"scope": "javascript"
 	},
 	"ngModel.$setViewValue()": {
 		"prefix": "ngModel.method.$setViewValue",
-		"body": "\\${1:ngModel}.method.\\$setViewValue(${2:value}, ${3:trigger});"
+		"body": "\\${1:ngModel}.method.\\$setViewValue(${2:value}, ${3:trigger});",
+		"scope": "javascript"
 	},
 	"ngModel.$overrideModelOptions()": {
 		"prefix": "ngModel.method.$overrideModelOptions",
-		"body": "\\${1:ngModel}.method.\\$overrideModelOptions(options);"
+		"body": "\\${1:ngModel}.method.\\$overrideModelOptions(options);",
+		"scope": "javascript"
 	},
 	"ngModel.$processModelValue()": {
 		"prefix": "ngModel.method.$processModelValue",
-		"body": "\\${1:ngModel}.method.\\$processModelValue();"
+		"body": "\\${1:ngModel}.method.\\$processModelValue();",
+		"scope": "javascript"
 	},
 	"ngModel.$setValidity()": {
 		"prefix": "ngModel.method.$setValidity",
-		"body": "\\${1:ngModel}.method.\\$setValidity(${2:validationErrorKey}, ${3:isValid}); "
+		"body": "\\${1:ngModel}.method.\\$setValidity(${2:validationErrorKey}, ${3:isValid}); ",
+		"scope": "javascript"
 	},
 	"ngModel.$viewValue": {
 		"prefix": "ngModel.$viewValue",
-		"body": "\\${1:ngModel}.\\$viewValue"
+		"body": "\\${1:ngModel}.\\$viewValue",
+		"scope": "javascript"
 	},
 	"ngModel.$modelValue": {
 		"prefix": "ngModel.$modelValue",
-		"body": "\\${1:ngModel}.\\$modelValue"
+		"body": "\\${1:ngModel}.\\$modelValue",
+		"scope": "javascript"
 	},
 	"ngModel.$parsers": {
 		"prefix": "ngModel.$parsers",
-		"body": "\\${1:ngModel}.\\$parsers"
+		"body": "\\${1:ngModel}.\\$parsers",
+		"scope": "javascript"
 	},
 	"ngModel.$formatters": {
 		"prefix": "ngModel.$formatters",
-		"body": "\\${1:ngModel}.\\$formatters"
+		"body": "\\${1:ngModel}.\\$formatters",
+		"scope": "javascript"
 	},
 	"ngModel.$validators": {
 		"prefix": "ngModel.$validators",
-		"body": "\\${1:ngModel}.\\$validators"
+		"body": "\\${1:ngModel}.\\$validators",
+		"scope": "javascript"
 	},
 	"ngModel.$asyncValidators": {
 		"prefix": "ngModel.$asyncValidators",
-		"body": "\\${1:ngModel}.\\$asyncValidators"
+		"body": "\\${1:ngModel}.\\$asyncValidators",
+		"scope": "javascript"
 	},
 	"ngModel.$viewChangeListeners": {
 		"prefix": "ngModel.$viewChangeListeners",
-		"body": "\\${1:ngModel}.\\$viewChangeListeners"
+		"body": "\\${1:ngModel}.\\$viewChangeListeners",
+		"scope": "javascript"
 	},
 	"ngModel.$error": {
 		"prefix": "ngModel.$error",
-		"body": "\\${1:ngModel}.\\$error"
+		"body": "\\${1:ngModel}.\\$error",
+		"scope": "javascript"
 	},
 	"ngModel.$pending": {
 		"prefix": "ngModel.$pending",
-		"body": "\\${1:ngModel}.\\$pending"
+		"body": "\\${1:ngModel}.\\$pending",
+		"scope": "javascript"
 	},
 	"ngModel.$untouched": {
 		"prefix": "ngModel.$untouched",
-		"body": "\\${1:ngModel}.\\$untouched"
+		"body": "\\${1:ngModel}.\\$untouched",
+		"scope": "javascript"
 	},
 	"ngModel.$touched": {
 		"prefix": "ngModel.$touched",
-		"body": "\\${1:ngModel}.\\$touched"
+		"body": "\\${1:ngModel}.\\$touched",
+		"scope": "javascript"
 	},
 	"ngModel.$pristine": {
 		"prefix": "ngModel.$pristine",
-		"body": "\\${1:ngModel}.\\$pristine"
+		"body": "\\${1:ngModel}.\\$pristine",
+		"scope": "javascript"
 	},
 	"ngModel.$dirty": {
 		"prefix": "ngModel.$dirty",
-		"body": "\\${1:ngModel}.\\$dirty"
+		"body": "\\${1:ngModel}.\\$dirty",
+		"scope": "javascript"
 	},
 	"ngModel.$valid": {
 		"prefix": "ngModel.$valid",
-		"body": "\\${1:ngModel}.\\$valid"
+		"body": "\\${1:ngModel}.\\$valid",
+		"scope": "javascript"
 	},
 	"ngModel.$invalid": {
 		"prefix": "ngModel.$invalid",
-		"body": "\\${1:ngModel}.\\$invalid"
+		"body": "\\${1:ngModel}.\\$invalid",
+		"scope": "javascript"
 	},
 	"ngModel.$name": {
 		"prefix": "ngModel.$name",
-		"body": "\\${1:ngModel}.\\$name"
+		"body": "\\${1:ngModel}.\\$name",
+		"scope": "javascript"
 	}
 }

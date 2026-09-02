@@ -1,7 +1,6 @@
 {
 	"Angular Decorator": {
 		"prefix": "ngDecorator",
-		"description": "Angular 1.x Decorator\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -30,6 +29,8 @@
 			"\t}",
 			"",
 			"}());"
-		]
+		],
+		"description": "Angular 1.x Decorator\n",
+		"scope": "javascript"
 	}
 }

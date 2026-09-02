@@ -9,74 +9,92 @@
 			"\t$0",
 			"}"
 		],
-		"description": "AngularJS 1.x Form Reset"
+		"description": "AngularJS 1.x Form Reset",
+		"scope": "javascript"
 	},
 	"ngForm.$pristine": {
 		"prefix": "ngForm.$pristine",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$pristine"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$pristine",
+		"scope": "javascript"
 	},
 	"ngForm.$dirty": {
 		"prefix": "ngForm.$dirty",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$dirty"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$dirty",
+		"scope": "javascript"
 	},
 	"ngForm.$valid": {
 		"prefix": "ngForm.$valid",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$valid"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$valid",
+		"scope": "javascript"
 	},
 	"ngForm.$invalid": {
 		"prefix": "ngForm.$invalid",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$invalid"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$invalid",
+		"scope": "javascript"
 	},
 	"ngForm.$submitted": {
 		"prefix": "ngForm.$submitted",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$submitted"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$submitted",
+		"scope": "javascript"
 	},
 	"ngForm.$pending": {
 		"prefix": "ngForm.$pending",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$pending"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$pending",
+		"scope": "javascript"
 	},
 	"ngForm.$error": {
 		"prefix": "ngForm.$error",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$error"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$error",
+		"scope": "javascript"
 	},
 	"ngForm.$rollbackViewValue()": {
 		"prefix": "ngForm.method.$rollbackViewValue",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$rollbackViewValue();"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$rollbackViewValue();",
+		"scope": "javascript"
 	},
 	"ngForm.$commitViewValue()": {
 		"prefix": "ngForm.method.$commitViewValue",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$commitViewValue();"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$commitViewValue();",
+		"scope": "javascript"
 	},
 	"ngForm.$addControl()": {
 		"prefix": "ngForm.method.$addControl",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$addControl(${3:control});"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$addControl(${3:control});",
+		"scope": "javascript"
 	},
 	"ngForm.$getControls()": {
 		"prefix": "ngForm.method.$getControls",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$getControls();"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$getControls();",
+		"scope": "javascript"
 	},
 	"ngForm.$removeControl()": {
 		"prefix": "ngForm.method.$removeControl",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$removeControl(${3:control});"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$removeControl(${3:control});",
+		"scope": "javascript"
 	},
 	"ngForm.$setDirty()": {
 		"prefix": "ngForm.method.$setDirty",
-		"body": "\\$${1:ctrl}.${2:formName.fieldName}.\\$setDirty();"
+		"body": "\\$${1:ctrl}.${2:formName.fieldName}.\\$setDirty();",
+		"scope": "javascript"
 	},
 	"ngForm.$setPristine()": {
 		"prefix": "ngForm.method.$setPristine",
-		"body": "\\$${1:ctrl}.${2:formName.fieldName}.\\$setPristine();"
+		"body": "\\$${1:ctrl}.${2:formName.fieldName}.\\$setPristine();",
+		"scope": "javascript"
 	},
 	"ngForm.$setUntouched()": {
 		"prefix": "ngForm.method.$setUntouched",
-		"body": "\\$${1:ctrl}.${2:formName.fieldName}.\\$setUntouched();"
+		"body": "\\$${1:ctrl}.${2:formName.fieldName}.\\$setUntouched();",
+		"scope": "javascript"
 	},
 	"ngForm.$setSubmitted()": {
 		"prefix": "ngForm.method.$setSubmitted",
-		"body": "\\$${1:ctrl}.${2:formName}.\\$setSubmitted();"
+		"body": "\\$${1:ctrl}.${2:formName}.\\$setSubmitted();",
+		"scope": "javascript"
 	},
 	"ngForm.$setValidity()": {
 		"prefix": "ngForm.method.$setValidity",
-		"body": "\\$${1:ctrl}.${2:formName}.${3:fieldName}.\\$setValidity('${4:validationErrorKey}', ${5:isValid});"
+		"body": "\\$${1:ctrl}.${2:formName}.${3:fieldName}.\\$setValidity('${4:validationErrorKey}', ${5:isValid});",
+		"scope": "javascript"
 	}
 }

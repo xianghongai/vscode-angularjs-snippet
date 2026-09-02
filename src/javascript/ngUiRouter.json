@@ -1,7 +1,6 @@
 {
 	"Angular UI-Router state": {
 		"prefix": "ngState",
-		"description": "Angular 1.x UI-Router state\n",
 		"body": [
 			"var state${1:Name} = {",
 			"\tname: '${2:state}',",
@@ -12,11 +11,12 @@
 			"\ttemplateUrl: '${5:template}.html',",
 			"\tcontroller: '${6:Controller} as ${7:\\$ctrl}'",
 			"};"
-		]
+		],
+		"description": "Angular 1.x UI-Router state\n",
+		"scope": "javascript"
 	},
 	"Angular UI-Router state(Resolve Data)": {
 		"prefix": "ngState.resolve",
-		"description": "Angular 1.x UI-Router state(Resolve Data)\n",
 		"body": [
 			"var state${1:Name} = {",
 			"\tname: '${2:state}',",
@@ -29,11 +29,12 @@
 			"\t\t}]",
 			"\t}",
 			"};"
-		]
+		],
+		"description": "Angular 1.x UI-Router state(Resolve Data)\n",
+		"scope": "javascript"
 	},
 	"Angular UI-Router Route to Component(Resolve Data)": {
 		"prefix": "ngState.component",
-		"description": "Angular 1.x UI-Router Route to Component\n",
 		"body": [
 			"var state${1:Name} = {",
 			"\tname: '${2:state}',",
@@ -45,38 +46,48 @@
 			"\t\t}]",
 			"\t}",
 			"};"
-		]
+		],
+		"description": "Angular 1.x UI-Router Route to Component\n",
+		"scope": "javascript"
 	},
 	"$state.go": {
 		"prefix": ["ngState.go()", "nggo"],
-		"body": ["\\$state.go('${1:state}'${2:, {${3:param}: ${4:value}}});"]
+		"body": ["\\$state.go('${1:state}'${2:, {${3:param}: ${4:value}}});"],
+		"scope": "javascript"
 	},
 	"$state.get()": {
 		"prefix": "ngState.get()",
-		"body": "\\$state.get(${1:stateOrName}, ${2:context});"
+		"body": "\\$state.get(${1:stateOrName}, ${2:context});",
+		"scope": "javascript"
 	},
 	"$state.includes()": {
 		"prefix": "ngState.includes()",
-		"body": "\\$state.includes(${1:stateOrName}, ${2:params}, ${3:options});"
+		"body": "\\$state.includes(${1:stateOrName}, ${2:params}, ${3:options});",
+		"scope": "javascript"
 	},
 	"$state.is()": {
 		"prefix": "ngState.is()",
-		"body": "\\$state.is(${1:stateOrName}, ${2:params}, ${3:options});"
+		"body": "\\$state.is(${1:stateOrName}, ${2:params}, ${3:options});",
+		"scope": "javascript"
 	},
 	"$state.reload()": {
 		"prefix": "ngState.reload()",
-		"body": "\\$state.reload(${1:state});"
+		"body": "\\$state.reload(${1:state});",
+		"scope": "javascript"
 	},
 	"$state.transitionTo()": {
 		"prefix": "ngState.transitionTo()",
-		"body": "\\$state.transitionTo(${1:to}, ${2:toParams}, ${3:options});"
+		"body": "\\$state.transitionTo(${1:to}, ${2:toParams}, ${3:options});",
+		"scope": "javascript"
 	},
 	"$urlRouterProvider.otherwise()": {
 		"prefix": "ngState.otherwise()",
-		"body": "\\$urlRouterProvider.otherwise('/${1:index}');"
+		"body": "\\$urlRouterProvider.otherwise('/${1:index}');",
+		"scope": "javascript"
 	},
 	"$urlRouterProvider.when()": {
 		"prefix": "ngState.when()",
-		"body": "\\$urlRouterProvider.when(${1:what}, ${2:handler});"
+		"body": "\\$urlRouterProvider.when(${1:what}, ${2:handler});",
+		"scope": "javascript"
 	}
 }

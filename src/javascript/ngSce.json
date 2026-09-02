@@ -1,84 +1,102 @@
 {
 	"$sce.isEnabled()": {
 		"prefix": "ngSce.isEnabled()",
-		"body": "\\$sce.isEnabled();"
+		"body": "\\$sce.isEnabled();",
+		"scope": "javascript"
 	},
 	"$sce.parseAs()": {
 		"prefix": "ngSce.parseAs()",
-		"body": "\\$sce.parseAs(${1:type}, ${2:expression});"
+		"body": "\\$sce.parseAs(${1:type}, ${2:expression});",
+		"scope": "javascript"
 	},
 	"$sce.trustAs()": {
 		"prefix": "ngSce.trustAs()",
-		"body": "\\$sce.trustAs(${1:type}, ${2:value});"
+		"body": "\\$sce.trustAs(${1:type}, ${2:value});",
+		"scope": "javascript"
 	},
 	"$sce.trustAsHtml()": {
 		"prefix": "ngSce.trustAsHtml()",
-		"body": "\\$sce.trustAsHtml(${1:value});"
+		"body": "\\$sce.trustAsHtml(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.trustAsCss()": {
 		"prefix": "ngSce.trustAsCss()",
-		"body": "\\$sce.trustAsCss(${1:value});"
+		"body": "\\$sce.trustAsCss(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.trustAsUrl()": {
 		"prefix": "ngSce.trustAsUrl()",
-		"body": "\\$sce.trustAsUrl(${1:value});"
+		"body": "\\$sce.trustAsUrl(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.trustAsResourceUrl()": {
 		"prefix": "ngSce.trustAsResourceUrl()",
-		"body": "\\$sce.trustAsResourceUrl(${1:value});"
+		"body": "\\$sce.trustAsResourceUrl(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.trustAsJs()": {
 		"prefix": "ngSce.trustAsJs()",
-		"body": "\\$sce.trustAsJs(${1:value});"
+		"body": "\\$sce.trustAsJs(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.getTrusted()": {
 		"prefix": "ngSce.getTrusted()",
-		"body": "\\$sce.getTrusted(${1:type}, ${2:maybeTrusted});"
+		"body": "\\$sce.getTrusted(${1:type}, ${2:maybeTrusted});",
+		"scope": "javascript"
 	},
 	"$sce.getTrustedHtml()": {
 		"prefix": "ngSce.getTrustedHtml()",
-		"body": "\\$sce.getTrustedHtml(${1:value});"
+		"body": "\\$sce.getTrustedHtml(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.getTrustedCss()": {
 		"prefix": "ngSce.getTrustedCss()",
-		"body": "\\$sce.getTrustedCss(${1:value});"
+		"body": "\\$sce.getTrustedCss(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.getTrustedUrl()": {
 		"prefix": "ngSce.getTrustedUrl()",
-		"body": "\\$sce.getTrustedUrl(${1:value});"
+		"body": "\\$sce.getTrustedUrl(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.getTrustedResourceUrl()": {
 		"prefix": "ngSce.getTrustedResourceUrl()",
-		"body": "\\$sce.getTrustedResourceUrl(${1:value});"
+		"body": "\\$sce.getTrustedResourceUrl(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.getTrustedJs()": {
 		"prefix": "ngSce.getTrustedJs()",
-		"body": "\\$sce.getTrustedJs(${1:value});"
+		"body": "\\$sce.getTrustedJs(${1:value});",
+		"scope": "javascript"
 	},
 	"$sce.parseAsHtml()": {
 		"prefix": "ngSce.parseAsHtml()",
-		"body": "\\$sce.parseAsHtml(${1:expression});"
+		"body": "\\$sce.parseAsHtml(${1:expression});",
+		"scope": "javascript"
 	},
 	"$sce.parseAsCss()": {
 		"prefix": "ngSce.parseAsCss()",
-		"body": "\\$sce.parseAsCss(${1:expression});"
+		"body": "\\$sce.parseAsCss(${1:expression});",
+		"scope": "javascript"
 	},
 	"$sce.parseAsUrl()": {
 		"prefix": "ngSce.parseAsUrl()",
-		"body": "\\$sce.parseAsUrl(${1:expression});"
+		"body": "\\$sce.parseAsUrl(${1:expression});",
+		"scope": "javascript"
 	},
 	"$sce.parseAsResourceUrl()": {
 		"prefix": "ngSce.parseAsResourceUrl()",
-		"body": "\\$sce.parseAsResourceUrl(${1:expression});"
+		"body": "\\$sce.parseAsResourceUrl(${1:expression});",
+		"scope": "javascript"
 	},
 	"$sce.parseAsJs()": {
 		"prefix": "ngSce.parseAsJs()",
-		"body": "\\$sce.parseAsJs(${1:expression}); "
+		"body": "\\$sce.parseAsJs(${1:expression}); ",
+		"scope": "javascript"
 	},
 	"ngTemplateCache": {
 		"prefix": "ngTemplateCache",
-		"body": [
-			"\\$templateCache.put('${1:name}.template.html', '${2:content of the template}');"
-		]
+		"body": ["\\$templateCache.put('${1:name}.template.html', '${2:content of the template}');"],
+		"scope": "javascript"
 	}
 }

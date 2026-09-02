@@ -1,66 +1,63 @@
 {
-	"name": "vscode-angularjs-snippet",
-	"publisher": "NicholasHsiang",
-	"displayName": "AngularJS Code Snippets",
-	"description": "Code snippets for AngularJS",
-	"icon": "art/icon.png",
-	"version": "0.1.3",
-	"galleryBanner": {
-		"color": "#fff",
-		"theme": "dark"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/xianghongai/vscode-angularjs-snippet/issues"
-	},
-	"homepage": "https://github.com/xianghongai/vscode-angularjs-snippet/",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/xianghongai/vscode-angularjs-snippet/blob/master/README.md"
-	},
-	"engines": {
-		"vscode": "^0.12.x"
-	},
-	"categories": [
-		"Snippets"
-	],
-	"keywords": [
-		"AngularJS",
-		"Snippet",
-		"AngularJS Snippets",
-		"AngularJS Code Snippets"
-	],
-	"contributes": {
-		"snippets": [
-			{
-				"language": "javascript",
-				"path": "./snippets/javascript.json"
-			},
-			{
-				"language": "html",
-				"path": "./snippets/html.json"
-			},
-			{
-				"language": "css",
-				"path": "./snippets/css.json"
-			},
-			{
-				"language": "scss",
-				"path": "./snippets/css.json"
-			},
-			{
-				"language": "less",
-				"path": "./snippets/css.json"
-			}
-		]
-	},
-	"scripts": {
-		"prebuild": "node merge.js",
-		"build": "vsce package",
-		"prepublish": "npm run build",
-		"publish": "vsce publish"
-	},
-	"devDependencies": {
-		"glob": "^7.1.4"
-	}
+  "name": "vscode-angularjs-snippet",
+  "displayName": "AngularJS Code Snippets",
+  "version": "0.1.4",
+  "description": "Code snippets for AngularJS",
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "AngularJS",
+    "AngularJS Code Snippets",
+    "AngularJS Snippets",
+    "Snippet"
+  ],
+  "homepage": "https://github.com/xianghongai/vscode-angularjs-snippet/",
+  "bugs": {
+    "url": "https://github.com/xianghongai/vscode-angularjs-snippet/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xianghongai/vscode-angularjs-snippet/blob/master/README.md"
+  },
+  "publisher": "NicholasHsiang",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "clean": "rimraf --glob \"*.vsix\" snippets",
+    "dev": "node --watch-path=src scripts/build.ts",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint scripts tests",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies",
+    "test": "vitest run",
+    "vscode:prepublish": "pnpm run clean && pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "@vscode/vsce": "3.9.2",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "picocolors": "^1.1.1",
+    "rimraf": "^6.1.3",
+    "vitest": "4.1.11"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "path": "./snippets/index.code-snippets"
+      }
+    ]
+  },
+  "icon": "art/icon.png",
+  "galleryBanner": {
+    "color": "#fff",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "packageManager": "pnpm@11.25.0"
 }

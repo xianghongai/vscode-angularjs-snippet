@@ -9,11 +9,11 @@
 			"}])",
 			""
 		],
-		"description": "Angular 1.x Factory (Simple)\n"
+		"description": "Angular 1.x Factory (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Factory": {
 		"prefix": "ngFactory",
-		"description": "Angular 1.x Factory\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -32,6 +32,8 @@
 			"\t\treturn service;",
 			"\t}",
 			"})();"
-		]
+		],
+		"description": "Angular 1.x Factory\n",
+		"scope": "javascript"
 	}
 }

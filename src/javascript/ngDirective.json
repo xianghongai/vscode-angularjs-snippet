@@ -18,11 +18,11 @@
 			"\t};",
 			"})"
 		],
-		"description": "Angular 1.x Directive (Simple)\n"
+		"description": "Angular 1.x Directive (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Directive(Component)": {
 		"prefix": "ngDirective",
-		"description": "Angular 1.x Directive\n组件型指令(Component)\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -53,11 +53,12 @@
 			"\t}",
 			"",
 			"})();"
-		]
+		],
+		"description": "Angular 1.x Directive\n组件型指令(Component)\n",
+		"scope": "javascript"
 	},
 	"Angular Directive(Decorator)": {
 		"prefix": "ngDirective.Decorator",
-		"description": "Angular 1.x Directive\n装饰器型指令(Decorator)\n用 link 函数，不是一个主体，只是附加行为能力，不使用新的作用域或独立的作用域\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -82,6 +83,8 @@
 			"\t}",
 			"",
 			"})();"
-		]
+		],
+		"description": "Angular 1.x Directive\n装饰器型指令(Decorator)\n用 link 函数，不是一个主体，只是附加行为能力，不使用新的作用域或独立的作用域\n",
+		"scope": "javascript"
 	}
 }

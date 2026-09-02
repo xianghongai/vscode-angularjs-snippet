@@ -1,13 +1,15 @@
 {
 	"Angular $ctrl method": {
 		"prefix": ["ngcm", "ngCtrl.method"],
+		"body": ["\\$ctrl.${1:fn} = function () {", "\t$0", "};"],
 		"description": "Angular 1.x $ctrl method \n",
-		"body": ["\\$ctrl.${1:fn} = function () {", "\t$0", "};"]
+		"scope": "javascript"
 	},
 	"Angular $ctrl.property": {
 		"prefix": ["ngcp", "ngCtrl.property"],
+		"body": ["\\$ctrl.${1:key} = ${2:value};", "$0"],
 		"description": "Angular 1.x $ctrl\n",
-		"body": ["\\$ctrl.${1:key} = ${2:value};", "$0"]
+		"scope": "javascript"
 	},
 	"Angular Controller (Simple)": {
 		"prefix": "ngc",
@@ -17,11 +19,11 @@
 			"}])",
 			""
 		],
-		"description": "Angular 1.x Controller (Simple)\n"
+		"description": "Angular 1.x Controller (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Controller": {
 		"prefix": "ngController",
-		"description": "Angular 1.x Controller\n依赖采用 Annotation 形式\n['dependencies', fn(dependencies)]，\n防止代码压缩参数破坏\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -39,6 +41,8 @@
 			"\t}",
 			"",
 			"}());"
-		]
+		],
+		"description": "Angular 1.x Controller\n依赖采用 Annotation 形式\n['dependencies', fn(dependencies)]，\n防止代码压缩参数破坏\n",
+		"scope": "javascript"
 	}
 }

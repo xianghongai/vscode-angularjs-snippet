@@ -1,7 +1,6 @@
 {
 	"Angular Provider": {
 		"prefix": "ngProvider",
-		"description": "Angular 1.x Provider\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -99,6 +98,8 @@
 			"\t\\$templateCache.put('component.tpl.html', '');",
 			"})",
 			""
-		]
+		],
+		"description": "Angular 1.x Provider\n",
+		"scope": "javascript"
 	}
 }

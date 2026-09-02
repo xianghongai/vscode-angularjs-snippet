@@ -1,7 +1,6 @@
 {
 	"Angular off ($destroy)": {
 		"prefix": ["ngOff", "ngDestroy"],
-		"description": "Angular 1.x $off",
 		"body": [
 			"\\$element.on('\\$destroy', function () {",
 			"\t\\$element.off('event', handleEvent);",
@@ -13,11 +12,13 @@
 			"// clearWatch();",
 			"// clearListener();",
 			"});"
-		]
+		],
+		"description": "Angular 1.x $off",
+		"scope": "javascript"
 	},
-
 	"$timeout": {
 		"prefix": "ngto",
-		"body": ["\\$timeout(function() {", "\t$0", "});"]
+		"body": ["\\$timeout(function() {", "\t$0", "});"],
+		"scope": "javascript"
 	}
 }

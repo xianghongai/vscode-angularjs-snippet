@@ -27,11 +27,11 @@
 			"}])",
 			"$4"
 		],
-		"description": "Angular 1.x Service (Simple)\n"
+		"description": "Angular 1.x Service (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Service": {
 		"prefix": "ngService",
-		"description": "Angular 1.x Service\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -70,6 +70,8 @@
 			"",
 			"\t}",
 			"})();"
-		]
+		],
+		"description": "Angular 1.x Service\n",
+		"scope": "javascript"
 	}
 }

@@ -7,11 +7,11 @@
 			"}])",
 			""
 		],
-		"description": "Angular 1.x Run (Simple)\n"
+		"description": "Angular 1.x Run (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Run": {
 		"prefix": "ngRun",
-		"description": "Angular 1.x Run\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -27,6 +27,8 @@
 			"\t}",
 			"",
 			"}());"
-		]
+		],
+		"description": "Angular 1.x Run\n",
+		"scope": "javascript"
 	}
 }

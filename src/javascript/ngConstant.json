@@ -1,12 +1,12 @@
 {
 	"Angular Constant (Simple)": {
 		"prefix": "ngconst",
+		"body": [".constant('${1:CONSTANT}', ${2:Value})"],
 		"description": "Angular 1.x Constant (Simple)\n",
-		"body": [".constant('${1:CONSTANT}', ${2:Value})"]
+		"scope": "javascript"
 	},
 	"Angular Constant": {
 		"prefix": "ngConstant",
-		"description": "Angular 1.x Constant\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -16,6 +16,8 @@
 			"\t\t.constant('${2:CONSTANT}', ${3:Value});",
 			"",
 			"}());"
-		]
+		],
+		"description": "Angular 1.x Constant\n",
+		"scope": "javascript"
 	}
 }

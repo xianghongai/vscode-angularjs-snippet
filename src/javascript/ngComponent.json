@@ -31,11 +31,11 @@
 			"})",
 			""
 		],
-		"description": "Angular 1.x Component (Simple)\n"
+		"description": "Angular 1.x Component (Simple)\n",
+		"scope": "javascript"
 	},
 	"Angular Component": {
 		"prefix": "ngComponent",
-		"description": "Angular 1.5+ Component\n",
 		"body": [
 			"(function () {",
 			"\t'use strict';",
@@ -68,27 +68,23 @@
 			"\t}",
 			"})();",
 			""
-		]
+		],
+		"description": "Angular 1.5+ Component\n",
+		"scope": "javascript"
 	},
 	"ngCtrl.$onInit()": {
-		"prefix": [
-			"ngCtrl.$onInit()",
-			"$ctrl.$onInit()"
-		],
-		"body": "\\$ctrl.\\$onInit = function () {$0};"
+		"prefix": ["ngCtrl.$onInit()", "$ctrl.$onInit()"],
+		"body": "\\$ctrl.\\$onInit = function () {$0};",
+		"scope": "javascript"
 	},
 	"ngCtrl.$onChanges()": {
-		"prefix": [
-			"ngCtrl.$onChanges()",
-			"$ctrl.$onChanges()"
-		],
-		"body": "\\$ctrl.\\$onChanges = function (changes) {$0};"
+		"prefix": ["ngCtrl.$onChanges()", "$ctrl.$onChanges()"],
+		"body": "\\$ctrl.\\$onChanges = function (changes) {$0};",
+		"scope": "javascript"
 	},
 	"ngCtrl.$onDestroy()": {
-		"prefix": [
-			"ngCtrl.$onDestroy()",
-			"$ctrl.$onDestroy()"
-		],
-		"body": "\\$ctrl.\\$onDestroy = function () {$0};"
+		"prefix": ["ngCtrl.$onDestroy()", "$ctrl.$onDestroy()"],
+		"body": "\\$ctrl.\\$onDestroy = function () {$0};",
+		"scope": "javascript"
 	}
 }
