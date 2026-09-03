@@ -2,7 +2,7 @@
   <h1 align="center">AngularJS Snippet (Visual Studio Code)</h1>
 </p>
 
-[中文](./README_CN.md)。
+[中文](./README.zh-CN.md)。
 
 <p align="center">
   <a href="https://github.com/xianghongai/vscode-angularjs-snippet">

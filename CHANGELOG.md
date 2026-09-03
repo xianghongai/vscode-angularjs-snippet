@@ -4,6 +4,11 @@ All notable changes to the **AngularJS Code Snippets** extension are documented 
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Entries start at 0.1.4; see the git history for what came before.
 
+## [0.2.0] - 2026-09-03
+
+- Unify packaging and publishing scripts to `vsce:package` and `vsce:publish`
+- Update GitHub Actions CI workflow to use `pnpm run vsce:publish`
+
 ## [0.1.4] - 2026-09-02
 
 - Fixed the Marketplace badges — the `vsmarketplacebadge.apphb.com` endpoints are gone, and their SVGs were blocking packaging outright
